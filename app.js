@@ -2,9 +2,15 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const db = require("./config/keys").mongoURI;
+const trips = require('./routes/api/trips');
 const users = require("./routes/api/users")
+const trips = require('./routes/api/trips');
 const User = require('./models/User');
 const bodyParser = require('body-parser');
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use("/api/trips",trips);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
