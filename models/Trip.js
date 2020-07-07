@@ -90,3 +90,7 @@ const TripSchema = new Schema({
 
 
 })
+
+const Trip = mongoose.model('trip', TripSchema);
+
+module.exports = Trip;
