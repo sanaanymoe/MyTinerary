@@ -9,7 +9,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps =  dispatch => {
 return {
-    getflights: (begin, destination)=> dispatch(getflights(begin, destination));
+    getflights: (begin, destination)=> dispatch(getflights(begin, destination))
 }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(flight.jsx)
