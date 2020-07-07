@@ -1,16 +1,17 @@
 const axios = require("axios");
 
-const hotel = axios({
+export function getFlights(begin, destination) {
+    axios({
     "method": "GET",
-    "url": "https://tripadvisor1.p.rapidapi.com/answers/list",
+    "url": "https://tripadvisor1.p.rapidapi.com/airports/search",
     "headers": {
         "content-type": "application/octet-stream",
         "x-rapidapi-host": "tripadvisor1.p.rapidapi.com",
         "x-rapidapi-key": "cfb3eccdc5mshd5e85a8b49aa3c6p11ae92jsnc3d8b742a517",
         "useQueryString": true
     }, "params": {
-        "limit": "10",
-        "question_id": "5283833"
+        "locale": begin,
+        "query": destination
     }
 })
     .then((response) => {
@@ -19,5 +20,5 @@ const hotel = axios({
     .catch((error) => {
         console.log(error)
     })
-
-    export default  hotel ;
+}
+    
