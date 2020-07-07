@@ -16,9 +16,15 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:5000",
   "eslintConfig": {
     "extends": "react-app"
   },
+  "frontend-install": "npm install --prefix frontend",
+  "frontend": "npm start --prefix frontend",
+  "dev" : "concurrently \"npm run server\" \"npm run frontend\"",
+
+
   "browserslist": {
     "production": [
       ">0.2%",
