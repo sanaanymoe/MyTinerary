@@ -24,10 +24,12 @@
     "mongoose": "^5.9.22",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
     "validator": "^13.1.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
   }
- 
 }
