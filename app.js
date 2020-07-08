@@ -1,3 +1,4 @@
+// import hotel from './frontend/utils/api/flightHotelApi'
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
@@ -11,6 +12,7 @@ const passport = require('passport');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 app.use("/api/trips", trips);
 

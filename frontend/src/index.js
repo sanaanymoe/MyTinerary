@@ -7,7 +7,12 @@ import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/api/session_api_util';
+
+
+import  {getHotels} from './actions/housing_actions'
+
 import { logout, login, signup, receiveCurrentUser } from './actions/session_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -39,6 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore({});
   }
   // Render our root component and pass in the store as a prop
+
+  
+  window.getHotels = getHotels;
+  window.getState = store.getState
+
+
   const root = document.getElementById('root');
   
   ReactDOM.render(<Root store={store} />, root);
@@ -60,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 //   </React.StrictMode>,
 //   document.getElementById('root')
 // );
+
 
 
 
