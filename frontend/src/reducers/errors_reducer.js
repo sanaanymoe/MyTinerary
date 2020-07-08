@@ -1,18 +1,12 @@
-import { RECEIVE_ALL_ERRORS, REMOVE_ALL_ERRORS } from '../actions/error_actions'
-
-const flightReducer = (state = {}, action) => {
-    Object.freeze(state)
-    switch (action.type) {
-        case RECEIVE_ALL_ERRORS:
-            return action.errors 
-        case REMOVE_ALL_ERRORS: 
-            return {}
-        default:
-            return state;
-    }
 
 
 
-}
+import { combineReducers } from 'redux';
 
-export default flightReducer; 
+import SessionErrorsReducer from './session_errors_reducer';
+
+export default combineReducers({
+  session: SessionErrorsReducer
+
+})
+
