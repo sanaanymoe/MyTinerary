@@ -10,7 +10,7 @@ const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use("/api/trips",trips);
+app.use("/api/trips", trips);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
