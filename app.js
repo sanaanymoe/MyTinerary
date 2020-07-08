@@ -28,12 +28,12 @@ app.use(bodyParser.json());
 
 
 app.get("/", (req, res) => {
-  const user = new User({
-    username: "mo",
-    email: "moe@gmail.com",
-    password: "moe123456",
-  });
-  user.save();
+  // const user = new User({
+  //   username: "mo",
+  //   email: "moe@gmail.com",
+  //   password: "moe123456",
+  // });
+  // user.save();
   res.send("Hello MERN");
 });
 

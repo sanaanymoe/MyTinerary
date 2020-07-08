@@ -42,12 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   
   ReactDOM.render(<Root store={store} />, root);
+
   window.axios = axios;
   window.store = store;
   window.login = login;
   window.signup = signup;
   window.dispatch = store.dispatch;
   window.currentUser = receiveCurrentUser;
+
 
 });
 
