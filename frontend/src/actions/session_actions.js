@@ -1,8 +1,4 @@
-<<<<<<< Updated upstream
 import * as APIUtil from '../util/api/session_api_util';
-=======
-import * as APIUtil from '../util/session_api_util';
->>>>>>> Stashed changes
 import jwt_decode from 'jwt-decode';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
