@@ -4,15 +4,15 @@ const Validator = require('validator');
 module.exports = function validateTripInput(data) {
     let errors = {};
 
-    if(!data.flight !== null) {
+    if( ( !Object.keys(data).includes("flight") ) ) {
         errors.flight = 'No flight data inputed'
     }
 
-    if( (data.housing) !== null) {
+    if( ( !Object.keys(data).includes("housing") ) ) {
         errors.housing = 'No housing data inputed'
     }
 
-    if( (data.event).length !== null) {
+    if( ( !Object.keys(data).includes("event") ) ) {
         errors.event = 'No event data inputed'
     }
 
