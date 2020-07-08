@@ -10,7 +10,6 @@
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
-    "postinstall": "webpack",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
   },
   "author": "",
@@ -32,8 +31,8 @@
     "validator": "^13.1.1"
   },
   "engines": {
-    "node": "12.5.0",
-    "npm": "6.9.0"
+    "node": "14.3.0",
+    "npm": "6.14.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"

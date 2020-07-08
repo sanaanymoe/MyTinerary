@@ -85,10 +85,10 @@ const EventSchema = new Schema({
 })
 
 const TripSchema = new Schema({
-    // user: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: 'users'
-    // },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
     // flight object
     flight: FlightSchema,
     housing: HousingSchema,
