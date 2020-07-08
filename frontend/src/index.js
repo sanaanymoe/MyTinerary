@@ -7,7 +7,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/api/session_api_util';
-import { logout } from './actions/session_actions';
+import { logout, login, signup, receiveCurrentUser } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -40,9 +40,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // Render our root component and pass in the store as a prop
   const root = document.getElementById('root');
-
-  ReactDOM.render(<Root store={store} />, root);
   
+  ReactDOM.render(<Root store={store} />, root);
+
+  window.axios = axios;
+  window.store = store;
+  window.login = login;
+  window.signup = signup;
+  window.dispatch = store.dispatch;
+  window.currentUser = receiveCurrentUser;
+
+
 });
 
 
@@ -53,6 +61,5 @@ document.addEventListener('DOMContentLoaded', () => {
 //   document.getElementById('root')
 // );
 
-window.axios = axios;
 
 

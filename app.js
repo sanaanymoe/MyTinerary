@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 const db = require("./config/keys").mongoURI;
-const trips = require('./routes/api/trips');
 const users = require("./routes/api/users")
 const User = require('./models/User');
 const bodyParser = require('body-parser');
@@ -10,7 +9,7 @@ const path = require('path');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use("/api/trips",trips);
+app.use("/api/trips", trips);
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
