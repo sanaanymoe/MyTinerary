@@ -11,7 +11,7 @@ const bodyParser = require('body-parser');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use("/api/trips",trips);
+app.use("/api/trips", trips);
 
 mongoose
   .connect(db, { useNewUrlParser: true })
