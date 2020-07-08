@@ -12,6 +12,8 @@ const passport = require('passport');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+app.use("/api/trips", trips);
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('frontend/build'));
@@ -30,12 +32,12 @@ app.use(bodyParser.json());
 
 
 app.get("/", (req, res) => {
-  const user = new User({
-    username: "mo",
-    email: "moe@gmail.com",
-    password: "moe123456",
-  });
-  user.save();
+  // const user = new User({
+  //   username: "mo",
+  //   email: "moe@gmail.com",
+  //   password: "moe123456",
+  // });
+  // user.save();
   res.send("Hello MERN");
 });
 
