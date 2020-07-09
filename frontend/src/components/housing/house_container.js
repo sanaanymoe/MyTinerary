@@ -1,6 +1,6 @@
 import {connect}  from 'react'; 
 import {getHotels} from '../../actions/housing_actions'
-import Hotels from './house'
+import {Hotels} from './house'
 const mapst = state=> {
     return {
         hotels : state.entitites.hotels
