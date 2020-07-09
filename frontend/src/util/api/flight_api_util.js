@@ -7,7 +7,6 @@ export const getFlights = (Airportorigin, Airportdestination, date, totalAdult) 
             "headers": {
                  "content-type":"application/octet-stream",
                  "x-rapidapi-host":"tripadvisor1.p.rapidapi.com",
-                 "x-rapidapi-key":"cfb3eccdc5mshd5e85a8b49aa3c6p11ae92jsnc3d8b742a517",
                  "useQueryString":true
             }, 
             "params": {
