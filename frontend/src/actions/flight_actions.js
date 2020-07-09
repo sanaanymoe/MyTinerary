@@ -1,4 +1,4 @@
-import  {getFlights} from '../utils/api/flight_api_util'
+import  { getFlights } from '../utils/api/flight_api_util'
 import * as errors from './error_actions'
 
 
@@ -13,6 +13,7 @@ export const receiveAllFlights = flights => {
 
 
 
-export const getFlights = (AirportOrigin, Airportdestination, date, totalAdult) => (dispatch) => {
-    return getFlights(AirportOrigin, Airportdestination, date, totalAdult)
-    .then (flights => dispatch(receiveAllFlights(flights), (err)=> dispatch(errors.receiveAllErrors(err))))}
+// export const getFlights = (AirportOrigin, Airportdestination, date, totalAdult) => (dispatch) => {
+//     return getFlights(AirportOrigin, Airportdestination, date, totalAdult)
+//     .then (flights => dispatch(receiveAllFlights(flights), (err)=> dispatch(errors.receiveAllErrors(err))))
+// }

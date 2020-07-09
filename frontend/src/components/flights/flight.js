@@ -1,6 +1,6 @@
 import React from 'react'
-import FlightDetails from './flight_details'
-class flight extends React.Component {
+
+class Flight extends React.Component {
 
     constructor(props) {
         super(props)
@@ -13,13 +13,15 @@ class flight extends React.Component {
     }
     handleSubmit(e) {
         e.preventDefault();
-        this.props.getFlights(this.state.AirportOrigin, this.state.Airportdestination, this.state.date, this.state.totalAdult)
+        // this.props.getFlights(this.state.AirportOrigin, this.state.Airportdestination, this.state.date, this.state.totalAdult)
+        //this.props.submitFlight
     }
 
     render() {
-        flights = this.props.flights
+        //flights = this.props.flights
         return (
             <div>
+                <h2>Flights</h2>
                 <form onSubmit={this.handleSubmit} className="flight-detail-entry">
                     <label>AirportOrigin
                      <input type="text" onChange={this.handleChange("AirportOrigin")} className="flight-entry-tab"/>
@@ -37,13 +39,9 @@ class flight extends React.Component {
 
                     <input type="submit" value= "Enter" />
                 </form>
-
-               if (flights){
-                  <FlightDetails flights= {flights}/>
-               }
             </div>
         )
     }
 }
 
-export default flight;
+export default Flight;
