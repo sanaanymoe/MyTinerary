@@ -10,11 +10,11 @@ const path = require('path');
 const trips = require('./routes/api/trips');
 const passport = require('passport');
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
 
 
-app.use("/api/trips", trips);
+// app.use("/api/trips", trips);
 
 
 if (process.env.NODE_ENV === 'production') {
@@ -28,23 +28,24 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch((err) => console.log(err));
-
+  
+app.use(passport.initialize());
+require('./config/passport')(passport);
+  
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 
-app.get("/", (req, res) => {
-  // const user = new User({
-  //   username: "mo",
-  //   email: "moe@gmail.com",
-  //   password: "moe123456",
-  // });
-  // user.save();
-  res.send("Hello MERN");
-});
+// app.get("/", (req, res) => {
+//   // const user = new User({
+//   //   username: "mo",
+//   //   email: "moe@gmail.com",
+//   //   password: "moe123456",
+//   // });
+//   // user.save();
+//   res.send("Hello MERN");
+// });
 
-app.use(passport.initialize());
-require('./config/passport')(passport);
 app.use("/api/users", users);
 app.use("/api/trips",trips);
 
