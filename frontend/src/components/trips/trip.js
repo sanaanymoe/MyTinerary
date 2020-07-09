@@ -8,7 +8,7 @@ class Trip extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='trip-container'>
         {<FlightContainer />}
         {<HouseContainer />}
         {<EventContainer />}
