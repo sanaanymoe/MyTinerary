@@ -1,9 +1,10 @@
 import React from 'react'
 import HotelsShow from './'
-class Hotels extends React.Component{
+export class Hotels extends React.Component{
     constructor(props){
         super(props)
-        this.state = { checkInDate: "", rooms: "", totalGuest: "", locationId:"" }
+        this.state = { location: "", price: "", startDate: "", endDate: "" }
+
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -14,6 +15,8 @@ handleChange(type){
 handleSubmit(e){
     e.preventDefault(); 
     this.props.getHotels(this.state);
+
+    // const housingData = this.state
 }
 
     render(){
@@ -21,20 +24,20 @@ handleSubmit(e){
         return (
     <div>
         <form onSubmit={this.handleSubmit} className="hotel-details-form"> 
-          <label> checkInDate(yyyy-mm-dd)
-             <input type="date" onChange={}  className="hotel-details-input"></input>  
+            <label> startDate
+             <input type="date" onChange={this.handleChange("startDate")}  className="hotel-details-input"></input>  
           </label>
 
-          <label> totalRooms
-             <input type="text" onChange={} className="hotel-details-input"> </input>  
+          <label> location
+             <input type="text" onChange={this.handleChange('location')} className="hotel-details-input"> </input>  
           </label>
 
-          <label> duration-in-days
-             <input type="number" onChange={} className="hotel-details-input"> </input>  
+         <label> price
+             <input type="string" onChange={this.handleChange('price')} className="hotel-details-input"> </input>  
           </label>
 
-          <label> LocationId
-             <input type="number" onChange={} className="hotel-details-input"></input>  
+            <label> endDate
+             <input type="number" onChange={this.handleChange('endDate')} className="hotel-details-input"></input>  
           </label>
 
             <input type="submit"  className="hotel-details-form-submit"></input>
@@ -49,4 +52,9 @@ handleSubmit(e){
     }
 }
 
-export default Hotels;
+export const housingData;
+
+
+
+
+

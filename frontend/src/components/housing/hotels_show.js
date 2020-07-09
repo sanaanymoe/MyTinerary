@@ -14,6 +14,7 @@ class HotelShow extends React.Component {
          const price  = this.props.hotel.price
         return (
              <div> 
+                 <div>
                    <div className="hotel-image"> 
                       <img src={image_url}></img>
 
@@ -22,7 +23,15 @@ class HotelShow extends React.Component {
                       <h3>{name}</h3>      
                       <div> {avg_rating}</div>
                       <h2> {price}</h2>
+                </div>
 
+                 <form>
+
+
+
+
+                     
+                 </form>
              </div>
         )
     }
