@@ -25,25 +25,31 @@ router.get('/user/:user_id', (req, res) => {
     );
 });
 
-router.post("/", 
+router.post("/newtrip", 
     passport.authenticate("jwt", {session: false}),
     (req, res) => {
 
-
+        // console.log(req.body)
       const { errors, isValid } = validateTripInput(req.body);
-        
+        debugger
       if (!isValid) {
+          debugger
         return res.status(400).json(errors);
       }
 
-        const newTrip = new Trip({
+        const newTrip =  new Trip({
+            user: req.user.id,
+            title: req.body.title,
             flight: req.body.flight,
             housing: req.body.housing,
             event: req.body.event
         })
+        debugger
     
     newTrip.save()
-        .then(trip => res.json(trip))
+        .then(trip => {
+            debugger 
+            res.json(trip)})
  })
 
 
