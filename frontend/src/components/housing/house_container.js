@@ -1,4 +1,4 @@
-import {connect}  from 'redux'; 
+import {connect}  from 'react'; 
 import {getHotels} from '../../actions/housing_actions'
 import Hotels from './house'
 const mapst = state=> {

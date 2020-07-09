@@ -1,6 +1,6 @@
 import React from 'react'
-import HotelsShow from './'
-class Hotels extends React.Component{
+
+class House extends React.Component{
     constructor(props){
         super(props)
         this.state = { checkInDate: "", rooms: "", totalGuest: "", locationId:"" }
@@ -17,36 +17,27 @@ handleSubmit(e){
 }
 
     render(){
-         const hotels = this.props.hotels
         return (
-    <div>
-        <form onSubmit={this.handleSubmit} className="hotel-details-form"> 
-          <label> checkInDate(yyyy-mm-dd)
-             <input type="date" onChange={}  className="hotel-details-input"></input>  
-          </label>
-
-          <label> totalRooms
-             <input type="text" onChange={} className="hotel-details-input"> </input>  
-          </label>
-
-          <label> duration-in-days
-             <input type="number" onChange={} className="hotel-details-input"> </input>  
-          </label>
-
-          <label> LocationId
-             <input type="number" onChange={} className="hotel-details-input"></input>  
-          </label>
-
-            <input type="submit"  className="hotel-details-form-submit"></input>
-        </form>
-
-        if (hotels){
-            hotels.map((hotel)=> <HotelsShow key={hotel.Id} hotel={hotel}/>)
-        }
-
- </div>
+            <div>
+                <h2>Hotels</h2>
+                <form onSubmit={this.handleSubmit} className="hotel-details-form"> 
+                <label> 
+                    <input type="date"  className="hotel-details-input"></input>  
+                </label>
+                <label> 
+                    <input type="text" className="hotel-details-input"></input>  
+                </label>
+                <label> 
+                    <input type="number" className="hotel-details-input"></input>  
+                </label>
+                <label> 
+                    <input type="number" className="hotel-details-input"></input>  
+                </label>
+                <input type="submit"  className="hotel-details-form-submit"></input>
+                </form>
+            </div>
         )
     }
 }
 
-export default Hotels;
+export default House;
