@@ -1,14 +1,19 @@
 import * as APIUtil from '../util/api/trip_api_util';
 
-export const MAKE_TRIP = 'MAKE_TRIP';
+export const RECEIVE_TRIP = 'RECEIVE_TRIP';
+export const RECEIVE_TRIPS = 'RECEIVE_TRIPS';
 
-export const createTrip = trip => ({
-  type: MAKE_TRIP,
+export const receiveTrip = trip => ({
+  type: RECEIVE_TRIP,
+  trip
+});
+export const receiveTrips = trips => ({
+  type: RECEIVE_TRIPS,
   trip
 });
 
 export const makeTrip = trip => dispatch => (
   APIUtil.makeTrip(trip).then(trip => (
-    dispatch(createTrip(trip))
+    dispatch(receiveTrip(trip))
   ))
 );

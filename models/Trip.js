@@ -24,11 +24,6 @@ const FlightSchema = new Schema(
         // required: true
     },
 
-    price: {
-        type: String,
-        // required: true
-    },
-
     bookingUrl: {
         type:String,
         // required: true
@@ -41,12 +36,6 @@ const HousingSchema = new Schema({
         type: String,
         // required: true
     },
-
-    price: {
-        type: String,
-        // required: true
-    },
-
     startDate: {
         type: Date,
         default: Date.now()
@@ -63,11 +52,6 @@ const HousingSchema = new Schema({
 
 const EventSchema = new Schema({
     location: {
-        type: String,
-        // required: true
-    },
-
-    price: {
         type: String,
         // required: true
     },
