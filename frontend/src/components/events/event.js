@@ -19,22 +19,7 @@ class Event extends React.Component {
   render() {
     return (
       <div>
-        <h2>Events</h2>
-        <form onSubmit={this.handleSubmit} className="event-detail-entry">
-          <label>Location
-            <input type="text" onChange={this.handleChange("location")} className="event-entry-tab" />
-          </label>
-          <label>Price
-            <input type="text" onChange={this.handleChange("price")} className="event-entry-tab" />
-          </label>
-          <label>Start Date
-            <input type="date" onChange={this.handleChange("startDate")} className="event-entry-tab" />
-          </label>
-          <label>End Date
-            <input type="date" onChange={this.handleChange("endDate")} className="event-entry-tab" />
-          </label>
-          <input type="submit" value="Enter" />
-        </form>
+        
       </div>
     )
   }
