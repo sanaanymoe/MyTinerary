@@ -14,3 +14,5 @@ class FlightDetails extends React.Component {
         )
     }
 }
+
+export default FlightDetails;
