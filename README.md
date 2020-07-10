@@ -11,6 +11,7 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
  ### MERN Stack
  
  - **Backend: MongoDB/Express**
+ 
 **Our Trip Schema**
  ``` var Trip = mongoose.model("trip", {
     user: {
