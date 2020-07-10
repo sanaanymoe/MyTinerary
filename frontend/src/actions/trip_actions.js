@@ -7,13 +7,13 @@ export const receiveTrip = trip => ({
   type: RECEIVE_TRIP,
   trip
 });
+
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
   trips
 });
 
 export const makeTrip = trip => dispatch => {
-  debugger
   return (
   APIUtil.makeTrip(trip).then(trip => (
     dispatch(receiveTrip(trip))
