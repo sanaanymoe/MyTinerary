@@ -21,13 +21,13 @@ class TripIndex extends React.Component {
     this.props.fetchTrips(this.props.currentUser.id);
   }
 
-    changeVisibilty = (e) => {
-        const item = document.getElementsByClassName('trip-index-item')
-        Array.from(item).forEach((trip) => {if(e.currentTarget.id === trip.id){
-            trip.classList.toggle('hidden')
-            }
-        })
-    }
+changeVisibilty = (e) => {
+    const item = document.getElementsByClassName('trip-item')
+    Array.from(item).forEach((trip) => {if(e.currentTarget.id === trip.id){
+        trip.classList.toggle('hidden')
+        }
+    })
+}
     
     pointer = e => {
         
@@ -76,7 +76,7 @@ class TripIndex extends React.Component {
             </div>
             <div className="grid-container">
               {trips.map((trip) => (
-                  <div className="trip-item">
+                  <div className="trip-index">
                     <h3 id={trip.title} onMouseOver={this.pointer} onClick={this.changeVisibilty}>{trip.title}</h3>
                     <div id={trip.title} className="trip-item">
                     <h2>Flight</h2>
