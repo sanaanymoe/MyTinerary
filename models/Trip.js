@@ -109,17 +109,19 @@ var Trip = mongoose.model("trip", {
   flight: {
     startLocation: String,
     endLocation: String,
-    price: String,
+    departureDate: Date,
+    returnDate: Date
   },
 
   housing: {
     location: String,
-    price: String,
+    startDate: Date,
+    endDate: Date
   },
 
   event: {
     location: String,
-    price: String,
+    date: Date
   },
 });
 
