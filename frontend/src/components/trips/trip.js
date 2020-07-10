@@ -27,25 +27,23 @@ class Trip extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  handleTitleChange = e => {
+    this.state.title = e.target.value;
+  }
+
   handleFlightChange = e => {
     // console.log(e.target)
     //console.log(e.target.name)
     // console.log(this.state)
-    const newState = Object.assign({}, this.state)
-    newState.flight[e.target.name] = e.target.value
-    this.setState({ newState });
+    this.state.flight[e.target.name] = e.target.value
   }
   
   handleHousingChange = e => {
-    const newState = Object.assign({}, this.state)
-    newState.housing[e.target.name] = e.target.value
-    this.setState({ newState });
+    this.state.housing[e.target.name] = e.target.value
   }
   
   handleEventChange = e => {
-    const newState = Object.assign({}, this.state)
-    newState.event[e.target.name] = e.target.value
-    this.setState({ newState });
+    this.state.event[e.target.name] = e.target.value
   }
 
   handleSubmit(e) {
@@ -58,6 +56,10 @@ class Trip extends React.Component {
     return (
       <div className='trip-container'>
         <form onSubmit={this.handleSubmit} className="flight-detail-entry">
+          <h2>Trip Name</h2>
+          <label>
+            <input type="text" name='title' onChange={this.handleTitleChange} className="title-entry-tab" />
+          </label>
           <h2>Flights</h2>
           <label>Departure City
             <input type="text" name='startLocation' onChange={this.handleFlightChange} className="flight-entry-tab" />

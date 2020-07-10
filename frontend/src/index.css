@@ -43,3 +43,17 @@ h1{
 label {
   background-color: wheat;
 }
+
+.trip-index {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.trip-index-item {
+  background-color: wheat;
+  opacity: .75;
+}
+
+.hidden {
+  display: none;
+}

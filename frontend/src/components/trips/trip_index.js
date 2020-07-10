@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 class TripIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            isVisible: false
+        };
     }
 
     componentDidMount(){
@@ -12,16 +15,29 @@ class TripIndex extends React.Component {
         
     }
 
+    changeVisibilty = (e) => {
+        const item = document.getElementsByClassName('trip-index-item')
+        Array.from(item).forEach((trip) => {if(e.currentTarget.id === trip.id){
+            trip.classList.toggle('hidden')
+            }
+        })
+    }
+    
+    pointer = e => {
+        
+    }
+
     render() { 
-        debugger
+        //debugger
+        const { isVisible } = this.state;
         const trips = this.props.trips[0] || []
         return (
-            <div>
-                <ul>
+            <div className="trip-index">
                  {
                     trips.map(trip => (
-                    <div>
-                        <h3>{trip.title}</h3>
+                       <> 
+                        <h2 id={trip.title} onMouseOver={this.pointer} onClick={this.changeVisibilty}>{trip.title}</h2>
+                        <div id={trip.title} className="trip-index-item">
                         <h2>Flight</h2>
                         <ul>
                             <li>{trip.flight.startLocation}</li>
@@ -40,10 +56,10 @@ class TripIndex extends React.Component {
                             <li>{trip.event.location}</li>
                             <li>{trip.event.date}</li>
                         </ul>
-                    </div>
+                        </div>
+                        </>
                     ))
                  }
-                </ul>
             </div>
         )
     }
