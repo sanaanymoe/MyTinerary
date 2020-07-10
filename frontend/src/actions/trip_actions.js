@@ -9,11 +9,13 @@ export const receiveTrip = trip => ({
 });
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
-  trip
+  trips
 });
 
-export const makeTrip = trip => dispatch => (
+export const makeTrip = trip => dispatch => {
+  debugger
+  return (
   APIUtil.makeTrip(trip).then(trip => (
     dispatch(receiveTrip(trip))
-  ))
-);
+  )))
+};

@@ -9,5 +9,5 @@ export const getUserTrips = (id) => {
 };
 
 export const makeTrip = (data) => {
-  return axios.post("/api/trips/", data);
+  return axios.post("/api/trips/newtrip", data);
 };

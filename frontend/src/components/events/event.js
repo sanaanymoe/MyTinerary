@@ -13,7 +13,6 @@ class Event extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    this.props.getFlights(this.state.AirportOrigin, this.state.Airportdestination, this.state.date, this.state.totalAdult)
   }
 
   render() {

@@ -8,9 +8,6 @@ import tripsReducer from './trips_reducer';
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  flights: flightsReducer,
-  events: eventsReducer,
-  housing: housingReducer,
   trips: tripsReducer
 })
 
