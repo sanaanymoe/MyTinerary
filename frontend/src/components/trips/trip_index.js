@@ -89,8 +89,7 @@ changeVisibilty = (e) => {
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
-                      <li>from {trip.flight.startLocation}</li>
-                      <li>{trip.flight.endLocation}</li>
+                      <li>from {trip.flight.startLocation} to {trip.flight.endLocation}</li>
                       <li>{trip.flight.startDate}</li>
                       <li>{trip.flight.endDate}</li>
                     </ul>
