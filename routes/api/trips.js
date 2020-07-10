@@ -16,6 +16,12 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ notripsfound: 'No trips found' }));
 });
 
+router.get('/trips/:trip_id', (req, res) => {
+    Trip.find({trip: req.params.trip_id})
+        .then(trips => res.json(trips))
+        .catch(err => res.status(404).json({ notripsfound: 'No trips found' }));
+});
+
 router.get('/user/:user_id', (req, res) => {
     Trip.find({user: req.params.user_id})
         .then(trips => res.json(trips))

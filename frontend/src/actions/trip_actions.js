@@ -28,3 +28,10 @@ export const fetchUserTrips = (id) => dispatch => {
       .catch(err => console.log(err))
   )
 }
+
+// export const showTrip = (id) => dispatch => {
+//   return (
+//     APIUtil.getTrip(id)
+//       .then(trip => dispatch(displayTrip(trip)))
+//   )
+// }
