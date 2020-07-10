@@ -92,15 +92,16 @@ label {
 }
 
 .trip-item {
-  background-color: rgba(51,51,51,0.4);
-    width: 600px;
+  background-color: rgba(51,51,51,0.6);
+    width: 800px;
+    height: 350px;
     padding-bottom: 5px;
     box-sizing: border-box;
     cursor: pointer;
     display: none;
     justify-content: center;
     align-items: center;
-    
+    color: white;
     
     -webkit-font-smoothing: subpixel-antialiased;
     border-radius: 10px;
@@ -117,4 +118,8 @@ label {
 
 .hidden {
   display: flex;
+}
+
+.trip-item ul {
+  margin: 5px;
 }
