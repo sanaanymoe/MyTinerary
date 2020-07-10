@@ -20,4 +20,15 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
 ## Future Implementation
 When creating a new trip, a user will be able to select their travel destination and then access flight, housing, and event components. A user will be able to see a list of flights, housing options, and local events and add these features to their trip planner. After adding travel criteria to their trip, the user may then access a filled out calendar that will give them a day by day overview of their trip itinerary. A user will be able to share a created trip with a friend on their **MyTinerary** friend's list. The friend can then choose to accept the trip and add it to their own trips.
 
-![Image of Yaktocat](https://github.com/sanaanymoe/MyTinerary/blob/master/screen_shot_2020-07-10_at_11.09.58_am.png)
+## Walkthrough
+![Image of Site](https://github.com/sanaanymoe/MyTinerary/blob/master/screen_shot_2020-07-10_at_11.09.58_am.png)
+ 1. User can Login or Signup on splash page.
+ 2. Once logged in, a user can then navigate tp **New Trip** to create a new trip.
+ 3. For the new trip, a user can then add in all of the given details about their trip.
+ 4. Upon pressing the submit button, the new trip has been created.
+ 5. This trip is then accessible under the tab **My Trips** in which a user can see all trips associated with their account.
+ 6. Clicking on a trip will then  show all the details of the trip that the user filled out. 
+
+
+
+
