@@ -1,16 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-
+import React from "react";
+import { Link } from "react-router-dom";
 
 class TripIndex extends React.Component {
-    constructor(props) {
-        super(props)
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    componentDidMount(){
-        this.props.fetchTrips(this.props.currentUser.id)
-        
-    }
+  componentDidMount() {
+    this.props.fetchTrips(this.props.currentUser.id);
+  }
 
     render() { 
         debugger
