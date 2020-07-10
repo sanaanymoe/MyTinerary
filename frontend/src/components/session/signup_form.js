@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { Button, Form } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 class SignupForm extends React.Component {
   constructor(props) {

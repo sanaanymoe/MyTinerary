@@ -7,6 +7,7 @@ export const receiveTrip = trip => ({
   type: RECEIVE_TRIP,
   trip
 });
+
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
   trips
