@@ -94,6 +94,7 @@ var Trip = mongoose.model("trip", {
     location: String,
     startDate: String,
     endDate: String
+
   },
   event: {
     location: String,

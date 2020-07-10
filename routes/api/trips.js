@@ -16,6 +16,12 @@ router.get('/', (req, res) => {
         .catch(err => res.status(404).json({ notripsfound: 'No trips found' }));
 });
 
+router.get('/trips/:trip_id', (req, res) => {
+    Trip.find({trip: req.params.trip_id})
+        .then(trips => res.json(trips))
+        .catch(err => res.status(404).json({ notripsfound: 'No trips found' }));
+});
+
 router.get('/user/:user_id', (req, res) => {
     Trip.find({user: req.params.user_id})
         .then(trips => res.json(trips))
@@ -31,9 +37,9 @@ router.post("/newtrip",
 
         // console.log(req.body)
       const { errors, isValid } = validateTripInput(req.body);
-        debugger
+        // debugger
       if (!isValid) {
-          debugger
+        //   debugger
         return res.status(400).json(errors);
       }
 
@@ -44,11 +50,11 @@ router.post("/newtrip",
             housing: req.body.housing,
             event: req.body.event
         })
-        debugger
+        // debugger
     
     newTrip.save()
         .then(trip => {
-            debugger 
+            // debugger 
             res.json(trip)})
  })
 

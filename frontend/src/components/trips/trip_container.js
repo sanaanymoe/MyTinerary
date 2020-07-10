@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { makeTrip } from '../../actions/trip_actions';
+import { makeTrip, receiveTrips } from '../../actions/trip_actions';
 import Trip from './trip';
 
 const mSTP = state => {
@@ -10,6 +10,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => {
   return {
+    getTrips: () => dispatch(receiveTrips()),
     makeTrip: (trip) => dispatch(makeTrip(trip)),
   };
 };

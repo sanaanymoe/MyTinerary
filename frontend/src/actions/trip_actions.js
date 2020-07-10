@@ -7,13 +7,31 @@ export const receiveTrip = trip => ({
   type: RECEIVE_TRIP,
   trip
 });
+
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
   trips
 });
 
-export const makeTrip = trip => dispatch => (
+export const makeTrip = trip => dispatch => {
+  // debugger
+  return (
   APIUtil.makeTrip(trip).then(trip => (
     dispatch(receiveTrip(trip))
-  ))
-);
+  )))
+};
+
+export const fetchUserTrips = (id) => dispatch => {
+  return (
+    APIUtil.getUserTrips(id)
+      .then(trips => dispatch(receiveTrips(trips)))
+      .catch(err => console.log(err))
+  )
+}
+
+// export const showTrip = (id) => dispatch => {
+//   return (
+//     APIUtil.getTrip(id)
+//       .then(trip => dispatch(displayTrip(trip)))
+//   )
+// }
