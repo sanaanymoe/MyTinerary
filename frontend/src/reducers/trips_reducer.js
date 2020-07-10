@@ -1,7 +1,7 @@
 import { RECEIVE_TRIP, RECEIVE_TRIPS } from '../actions/trip_actions'
  
 export const tripReducer = (state={}, action)=> {
-   debugger
+   // debugger
      Object.freeze(state)
      const nextState = Object.assign({}, state)
       switch(action.type) {

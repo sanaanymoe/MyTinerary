@@ -13,9 +13,17 @@ export const receiveTrips = trips => ({
 });
 
 export const makeTrip = trip => dispatch => {
-  debugger
+  // debugger
   return (
   APIUtil.makeTrip(trip).then(trip => (
     dispatch(receiveTrip(trip))
   )))
 };
+
+export const fetchUserTrips = (id) => dispatch => {
+  return (
+    APIUtil.getUserTrips(id)
+      .then(trips => dispatch(receiveTrips(trips)))
+      .catch(err => console.log(err))
+  )
+}
