@@ -12,7 +12,7 @@ import { setAuthToken } from './util/api/session_api_util';
 import  {getHotels} from './actions/housing_actions'
 
 import { logout, login, signup, receiveCurrentUser } from './actions/session_actions';
-import { receiveTrips } from './actions/trip_actions';
+import { receiveTrips, makeTrip } from './actions/trip_actions';
 import { receiveUsers } from './actions/user_actions';
 
 
@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.currentUser = receiveCurrentUser;
   window.getTrips = receiveTrips;
+  window.makeTrips = makeTrip;
   window.getUsers = receiveUsers;
 
 

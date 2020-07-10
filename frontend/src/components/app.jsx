@@ -8,7 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container'
 import TripContainer from './trips/trip_container'
-import {Button} from 'react-bootstrap'
+// import {Button} from 'react-bootstrap'
 
 const App = () => (
   <div>
