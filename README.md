@@ -20,3 +20,4 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
 ## Future Implementation
 When creating a new trip, a user will be able to select their travel destination and then access flight, housing, and event components. A user will be able to see a list of flights, housing options, and local events and add these features to their trip planner. After adding travel criteria to their trip, the user may then access a filled out calendar that will give them a day by day overview of their trip itinerary. A user will be able to share a created trip with a friend on their **MyTinerary** friend's list. The friend can then choose to accept the trip and add it to their own trips.
 
+![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
