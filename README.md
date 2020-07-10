@@ -1,3 +1,4 @@
+# MyTinerary
 MyTinerary is a web application that allows you to plan, customize, and visualize one or many of your trips.
 
 ## Background and Overview
