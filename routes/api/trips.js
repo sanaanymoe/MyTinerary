@@ -31,9 +31,9 @@ router.post("/newtrip",
 
         // console.log(req.body)
       const { errors, isValid } = validateTripInput(req.body);
-        debugger
+        // debugger
       if (!isValid) {
-          debugger
+        //   debugger
         return res.status(400).json(errors);
       }
 
@@ -44,11 +44,11 @@ router.post("/newtrip",
             housing: req.body.housing,
             event: req.body.event
         })
-        debugger
+        // debugger
     
     newTrip.save()
         .then(trip => {
-            debugger 
+            // debugger 
             res.json(trip)})
  })
 

@@ -3,7 +3,7 @@ const Validator = require('validator');
 
 module.exports = function validateTripInput(data) {
     let errors = {};
-    debugger
+    // debugger
     if( ( !Object.keys(data).includes("flight") ) ) {
         errors.flight = 'No flight data inputed'
     }
