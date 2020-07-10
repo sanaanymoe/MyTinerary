@@ -11,6 +11,7 @@ import TripContainer from './trips/trip_container'
 
 // import {Button} from 'react-bootstrap';
 import TripIndexContainer from './trips/trip_index_container'
+import TripIndexItem from './trips/trip_index_item_container'
 
 const App = () => (
   <div>
@@ -30,6 +31,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/new_trip" component={TripContainer} />
       <ProtectedRoute exact path="/trips" component={TripIndexContainer}/>
+      <ProtectedRoute exact path="/trip" component={TripIndexItem}/>
     </Switch>
     <Route exact path="/" component={MainPage} />
   </div>
