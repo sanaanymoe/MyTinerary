@@ -10,17 +10,33 @@ import {
 } from "react-bootstrap";
 
 class TripIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+    constructor(props) {
+        super(props)
+        this.state = {
+            isVisible: false
+        };
+    }
 
   componentDidMount() {
     this.props.fetchTrips(this.props.currentUser.id);
   }
 
+changeVisibilty = (e) => {
+    const item = document.getElementsByClassName('trip-item')
+    Array.from(item).forEach((trip) => {if(e.currentTarget.id === trip.id){
+        trip.classList.toggle('hidden')
+        }
+    })
+}
+    
+    pointer = e => {
+        
+    }
+
     render() { 
-        // debugger
-        const trips = this.props.trips[0] || []
+        //debugger
+        const { isVisible } = this.state;
+        const trips = this.props.trips[0] || []         
         return (
           <div>
             <div className="main-div">
@@ -58,31 +74,33 @@ class TripIndex extends React.Component {
                 </Navbar.Collapse>
               </Navbar>
             </div>
-            <ul className="grid-container">
+            <div className="grid-container">
               {trips.map((trip) => (
-                <div className="trip-item">
-                  <h3>{trip.title}</h3>
-                  <h2>Flight</h2>
-                  <ul>
-                    <li>{trip.flight.startLocation}</li>
-                    <li>{trip.flight.endLocation}</li>
-                    <li>{trip.flight.startDate}</li>
-                    <li>{trip.flight.endDate}</li>
-                  </ul>
-                  <h2>Hotel</h2>
-                  <ul>
-                    <li>{trip.housing.location}</li>
-                    <li>{trip.housing.startDate}</li>
-                    <li>{trip.housing.endDate}</li>
-                  </ul>
-                  <h2>Event</h2>
-                  <ul>
-                    <li>{trip.event.location}</li>
-                    <li>{trip.event.date}</li>
-                  </ul>
+                  <div className="trip-index">
+                    <h3 id={trip.title} onMouseOver={this.pointer} onClick={this.changeVisibilty}>{trip.title}</h3>
+                    <div id={trip.title} className="trip-item">
+                    <h2>Flight</h2>
+                    <ul>
+                        <li>{trip.flight.startLocation}</li>
+                        <li>{trip.flight.endLocation}</li>
+                        <li>{trip.flight.startDate}</li>
+                        <li>{trip.flight.endDate}</li>
+                    </ul>
+                    <h2>Hotel</h2>
+                    <ul>
+                        <li>{trip.housing.location}</li>
+                        <li>{trip.housing.startDate}</li>
+                        <li>{trip.housing.endDate}</li>
+                    </ul>
+                    <h2>Event</h2>
+                    <ul>
+                        <li>{trip.event.location}</li>
+                        <li>{trip.event.date}</li>
+                    </ul>
+                    </div>
                 </div>
               ))}
-            </ul>
+            </div>
           </div>
         );
     }

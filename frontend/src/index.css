@@ -117,3 +117,7 @@ label {
     backface-visibility: hidden;
     margin-bottom: 50px;
 }
+
+.hidden {
+  display: none;
+}
