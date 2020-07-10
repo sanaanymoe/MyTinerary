@@ -40,6 +40,7 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
 
  
  -  **Frontend: React/Node.js**
+ 
  **Session API Util**
  ```  
 import axios from 'axios';
