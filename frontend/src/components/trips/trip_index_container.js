@@ -8,7 +8,6 @@ const mapStateToProps = state => {
     return {
         trips: Object.values(state.entities.trips),
         currentUser: state.session.user
-
     }
  
 };

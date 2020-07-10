@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 
 class TripIndex extends React.Component {
@@ -8,19 +9,20 @@ class TripIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchTrips(this.props.currentUser.id)
+        
     }
 
-    render() {
-        debugger
-        
+    render() { 
+        const trips = this.props.trips[0] || []
         return (
             <div>
-                {
-                    this.props.trips.map(trip => (
-                        trip.title
+                <ul>
+                 {
+                    trips.map(trip => (
+                        <li><Link to={`/api/trips/${trip.id}`}>{trip.title}</Link></li>
                     ))
-
-                }
+                 }
+                </ul>
             </div>
         )
     }
