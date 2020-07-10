@@ -17,12 +17,24 @@ body{
   background-position: center;
   background-size: cover;
 }
+button {
+  margin: 20px;
+}
+
+.login-signup-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 100px;
+}
 
 h1{
   color: wheat;
 }
 
 .signup-form-container{  
+  margin-top: 100px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -39,7 +51,69 @@ h1{
   align-items: center;
   justify-content: center;
 }
+.login-form-container{  
+  margin-top: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.login-form{
+  /* background: rgba(0, 128, 0, 0.3); */
+  /* border: 1px solid gray; */
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 label {
   background-color: wheat;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+/* // // grid-template-columns: repeat( auto-fit, minmax(100px, 1fr) );
+//    list-style-type: none;
+//    grid-gap: 1em;
+//     width: 100%;
+    // display: flex; */
+    justify-content: space-evenly
+}
+
+.trip-item {
+  background-color: rgba(51,51,51,0.4);
+    width: 100%;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* // position: relative;
+   
+     // // height: 260px;
+    // // width: 350px;
+    // // margin-top: 10px; */
+    
+    -webkit-font-smoothing: subpixel-antialiased;
+    border-radius: 10px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgba(249,249,249,0.1);
+    /* // transition: ease-out;
+    // transform: scale(1.5);
+    // // -webkit-transition: transform 2s ease-in-out; */
+    border-image: initial;
+    object-fit: cover;
+    /* width: 17%; */
+    backface-visibility: hidden;
+    margin-bottom: 50px;
 }
