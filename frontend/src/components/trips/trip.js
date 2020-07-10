@@ -7,15 +7,16 @@ import EventContainer from '../events/event'
 class Trip extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    };
+   this.state = {
+     flight : {
+       destination: ""
+     }
+   }
     this.handleSubmit = this.handleSubmit.bind(this);
   }
       
   handleChange(type) {
-    return e => this.setState({ [type]: e.target.value });
+    return e => this.setState({ flight:{[type] : e.target.value }});
   }
 
   handleSubmit(e) {

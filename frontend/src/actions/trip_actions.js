@@ -9,7 +9,7 @@ export const receiveTrip = trip => ({
 });
 export const receiveTrips = trips => ({
   type: RECEIVE_TRIPS,
-  trip
+  trips
 });
 
 export const makeTrip = trip => dispatch => (
