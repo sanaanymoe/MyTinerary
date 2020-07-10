@@ -1,5 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import {
+  Button,
+  Nav,
+  NavDropdown,
+  Navbar,
+  Form,
+  FormControl,
+} from "react-bootstrap";
 
 class TripIndex extends React.Component {
   constructor(props) {
@@ -11,39 +19,72 @@ class TripIndex extends React.Component {
   }
 
     render() { 
-        debugger
+        // debugger
         const trips = this.props.trips[0] || []
         return (
-            <div>
-                <ul>
-                 {
-                    trips.map(trip => (
-                    <div>
-                        <h3>{trip.title}</h3>
-                        <h2>Flight</h2>
-                        <ul>
-                            <li>{trip.flight.startLocation}</li>
-                            <li>{trip.flight.endLocation}</li>
-                            <li>{trip.flight.startDate}</li>
-                            <li>{trip.flight.endDate}</li>
-                        </ul>
-                        <h2>Hotel</h2>
-                        <ul>
-                            <li>{trip.housing.location}</li>
-                            <li>{trip.housing.startDate}</li>
-                            <li>{trip.housing.endDate}</li>
-                        </ul>
-                        <h2>Event</h2>
-                        <ul>
-                            <li>{trip.event.location}</li>
-                            <li>{trip.event.date}</li>
-                        </ul>
-                    </div>
-                    ))
-                 }
-                </ul>
+          <div>
+            <div className="main-div">
+              <Navbar bg="light" expand="lg">
+                <Navbar.Brand href="#home">MyTinerary</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav className="mr-auto">
+                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="#link">Link</Nav.Link>
+                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+                      <NavDropdown.Item href="#action/3.1">
+                        Action
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.2">
+                        Another action
+                      </NavDropdown.Item>
+                      <NavDropdown.Item href="#action/3.3">
+                        Something
+                      </NavDropdown.Item>
+                      <NavDropdown.Divider />
+                      <NavDropdown.Item href="#action/3.4">
+                        Separated link
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </Nav>
+                  <Form inline>
+                    <FormControl
+                      type="text"
+                      placeholder="Search"
+                      className="mr-sm-2"
+                    />
+                    <Button variant="outline-success">Search</Button>
+                  </Form>
+                </Navbar.Collapse>
+              </Navbar>
             </div>
-        )
+            <ul className="grid-container">
+              {trips.map((trip) => (
+                <div className="trip-item">
+                  <h3>{trip.title}</h3>
+                  <h2>Flight</h2>
+                  <ul>
+                    <li>{trip.flight.startLocation}</li>
+                    <li>{trip.flight.endLocation}</li>
+                    <li>{trip.flight.startDate}</li>
+                    <li>{trip.flight.endDate}</li>
+                  </ul>
+                  <h2>Hotel</h2>
+                  <ul>
+                    <li>{trip.housing.location}</li>
+                    <li>{trip.housing.startDate}</li>
+                    <li>{trip.housing.endDate}</li>
+                  </ul>
+                  <h2>Event</h2>
+                  <ul>
+                    <li>{trip.event.location}</li>
+                    <li>{trip.event.date}</li>
+                  </ul>
+                </div>
+              ))}
+            </ul>
+          </div>
+        );
     }
 };
 

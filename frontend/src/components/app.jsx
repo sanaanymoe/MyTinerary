@@ -25,15 +25,16 @@ const App = () => (
       <Button variant="light">Light</Button>{" "}
       <Button variant="dark">Dark</Button> <Button variant="link">Link</Button>
     </> */}
-    <NavBarContainer />
+    {/* <NavBarContainer /> */}
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/new_trip" component={TripContainer} />
-      <ProtectedRoute exact path="/trips" component={TripIndexContainer}/>
-      <ProtectedRoute exact path="/trip" component={TripIndexItem}/>
+      <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
+      <ProtectedRoute exact path="/trip" component={TripIndexItem} />
+      <ProtectedRoute exact path="/home" component={NavBarContainer} />
     </Switch>
-    <Route exact path="/" component={MainPage} />
+    <Route exact path="/" component={NavBarContainer} />
   </div>
 );
 

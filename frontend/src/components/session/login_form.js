@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
+import { Button } from "react-bootstrap";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -59,22 +61,30 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
-          <div>
-            <input type="text"
+          <div className="login-form">
+            <input
+              type="text"
               value={this.state.email}
-              onChange={this.update('email')}
+              onChange={this.update("email")}
               placeholder="Email"
             />
             <br />
-            <input type="password"
+            <input
+              type="password"
               value={this.state.password}
-              onChange={this.update('password')}
+              onChange={this.update("password")}
               placeholder="Password"
             />
             <br />
-            <input type="submit" value="Submit" />
+            <Button variant="success" type="submit">
+              Submit
+            </Button>
+            <Link to={"/signup"}>
+              <Button variant="primary">Signup instead</Button>
+              {"  "}
+            </Link>
             {/* {this.renderErrors()} */}
           </div>
         </form>
