@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
 import { Button } from "react-bootstrap";
 
@@ -92,6 +93,9 @@ class SignupForm extends React.Component {
             <Button variant="success" type="submit">
               Submit
             </Button>
+            <Link to={"/login"}>
+              <Button variant="primary">Login instead</Button>
+            </Link>
             {/* {this.renderErrors()} */}
           </div>
         </form>
