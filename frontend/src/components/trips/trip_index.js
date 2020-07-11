@@ -193,6 +193,7 @@ changeVisibilty = (e) => {
                     <h2>Event</h2>
                     <ul>
                       <li>{trip.event.location}</li>
+                      
                       <li>{trip.event.date}</li>
 
                     </ul>
