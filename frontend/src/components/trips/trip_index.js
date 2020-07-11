@@ -22,9 +22,12 @@ class TripIndex extends React.Component {
   }
 
 displayDate(dates) {
-const d = dates.split("-");
-let month  = ""
-if (d[1] === '01'){
+
+  if (dates !== null) {
+    let l = ''
+    let d = dates.split("-")
+    let month  = ""
+    if (d[1] === '01' ){
 
    month = "Jan";
 
@@ -67,9 +70,27 @@ if (d[1] === '01'){
 } else {
 
      month = "Dec"
+} 
+if (d[2] === '1') {
+   l = "st"
 }
-   const dat  = d[0] + " " + month +" "+ d[2]
+  else if(d[2][0] === '2') {
+     l =  'nd'
+  
+  }
+  else if (d[2][0]=== '3'){
+     l = 'rd'
+  } else {
+    l = 'th'
+  }
+
+  const dat = d[2]+l+ " " + month + " "+d[0]
    return dat
+} 
+
+  return null
+
+
 }
 
 
@@ -135,6 +156,7 @@ changeVisibilty = (e) => {
                     <ul>
                         <li>{trip.flight.startLocation}</li>
                         <li>{trip.flight.endLocation}</li>
+                 debugger
                         <li>{this.displayDate(trip.flight.startDate)}</li>
                         <li>{this.displayDate(trip.flight.endDate)}</li>
                     </ul>
