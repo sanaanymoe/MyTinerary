@@ -2,16 +2,24 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 //import './navbar.css'
 import { Button, Nav, NavDropdown, Navbar, Form, FormControl } from "react-bootstrap";
+import MyCalendar from "../main/calendar";
+
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.demoLoginHandler = this.demoLoginHandler.bind(this);
   }
 
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+  }
+
+  demoLoginHandler(event) {
+    event.preventDefault();
+    this.props.login(this.props.demoUser);
   }
 
   // Selectively render links dependent on whether the user is logged in
@@ -67,21 +75,24 @@ class NavBar extends React.Component {
             <Button onClick={this.logoutUser} variant="danger">
               Logout
             </Button>{" "}
+          <MyCalendar />
           </div>
         </div>
       );
     } else {
       return (
-          
-          <div className="login-signup-buttons">
-            <Link to={"/signup"}>
-              <Button variant="primary">Signup</Button>
-              {"  "}
-            </Link>
-            <Link to={"/login"}>
-              <Button variant="primary">Login</Button>
-            </Link>
-          </div>
+        <div className="login-signup-buttons">
+          <Link to={"/signup"}>
+            <Button variant="primary">Signup</Button>
+            {"  "}
+          </Link>
+          <Link to={"/login"}>
+            <Button variant="primary">Login</Button>
+          </Link>
+          <Button variant="primary" onClick={this.demoLoginHandler}>
+            Demo User
+          </Button>
+        </div>
       );
     }
   }
@@ -90,6 +101,7 @@ class NavBar extends React.Component {
     return (
       <div>
         {/* <h1>MyTinerary</h1> */}
+        
         {this.getLinks()}
       </div>
     );

@@ -9,6 +9,8 @@ import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container'
 import TripContainer from './trips/trip_container'
 
+
+
 // import {Button} from 'react-bootstrap';
 import TripIndexContainer from './trips/trip_index_container'
 import TripIndexItem from './trips/trip_index_item_container'
@@ -26,6 +28,7 @@ const App = () => (
       <Button variant="dark">Dark</Button> <Button variant="link">Link</Button>
     </> */}
     {/* <NavBarContainer /> */}
+    
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
