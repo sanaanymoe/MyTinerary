@@ -149,11 +149,20 @@ changeVisibilty = (e) => {
             </div>
             <div className="grid-container">
               {trips.map((trip) => (
-                  <div className="trip-index">
-                    <h3 id={trip.title} onMouseOver={this.pointer} onClick={this.changeVisibilty}>{trip.title}</h3>
-                    <div id={trip.title} className="trip-item">
+                <div className="trip-index">
+                  <Button
+                    className="trip-btn"
+                    variant="secondary"
+                    id={trip._id}
+                    onMouseOver={this.pointer}
+                    onClick={this.changeVisibilty}
+                  >
+                    {trip.title}
+                  </Button>
+                  <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
+
                         <li>{trip.flight.startLocation}</li>
                         <li>{trip.flight.endLocation}</li>
                  debugger
@@ -170,8 +179,24 @@ changeVisibilty = (e) => {
                     <ul>
                         <li>{trip.event.location}</li>
                         <li>{this.displayDate(trip.event.date)}</li>
+
+                      <li>from {trip.flight.startLocation} to {trip.flight.endLocation}</li>
+                      <li>{trip.flight.startDate}</li>
+                      <li>{trip.flight.endDate}</li>
                     </ul>
-                    </div>
+                    <h2>Hotel</h2>
+                    <ul>
+                      <li>{trip.housing.location}</li>
+                      <li>{trip.housing.startDate}</li>
+                      <li>{trip.housing.endDate}</li>
+                    </ul>
+                    <h2>Event</h2>
+                    <ul>
+                      <li>{trip.event.location}</li>
+                      <li>{trip.event.date}</li>
+
+                    </ul>
+                  </div>
                 </div>
               ))}
             </div>

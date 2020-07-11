@@ -9,6 +9,9 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
 ## Technologies
 
  ### MERN Stack
+ 
+ - **Backend: MongoDB/Express**
+ 
 **Our Trip Schema**
  ``` var Trip = mongoose.model("trip", {
     user: {
@@ -34,14 +37,44 @@ MyTinerary is a web application that allows you to plan, customize, and visualiz
   },
 }); 
 ```
- - **Backend: MongoDB/Express**
+
 
  
  -  **Frontend: React/Node.js**
+ 
+ **Session API Util**
+ ```  
+import axios from 'axios';
+
+export const setAuthToken = token => {
+  if (token) {
+    axios.defaults.headers.common['Authorization'] = token;
+  } else {
+    delete axios.defaults.headers.common['Authorization'];
+  }
+};
+
+export const signup = (userData) => {
+  return axios.post('/api/users/register', userData);
+};
+
+export const login = (userData) => {
+  return axios.post('/api/users/login', userData);
+};
+```
+
  ### Future Technologies
- - **Flight API**
+  - **Flight API**
+	 - Flight information can be input by user and a list of flights matching the criteria will be displayed for the user.
+	 - Possible API: **TripAdvisor**
   - **Housing API**
+	   - Housing information can be input by user and a list of housing matching the criteria will be displayed for the user.
+    - Possibly API: **Airbnb**
   - **Event API**
+	   - Event information can be input by user and a list of events matching the criteria will be displayed for the user.
+    - Possibly API: **Yelp**/**TripAdvisor**/**EventBrite**
+    
+ 
 
 ## Future Implementation
 When creating a new trip, a user will be able to select their travel destination and then access flight, housing, and event components. A user will be able to see a list of flights, housing options, and local events and add these features to their trip planner. After adding travel criteria to their trip, the user may then access a filled out calendar that will give them a day by day overview of their trip itinerary. A user will be able to share a created trip with a friend on their **MyTinerary** friend's list. The friend can then choose to accept the trip and add it to their own trips.
@@ -54,7 +87,10 @@ When creating a new trip, a user will be able to select their travel destination
  4. Upon pressing the submit button, the new trip has been created.
  5. This trip is then accessible under the tab **My Trips** in which a user can see all trips associated with their account.
  6. Clicking on a trip will then  show all the details of the trip that the user filled out. 
-
+ 
+ ## Live Link
+ Hosted on Heroku
+ http://mytinerary2020.herokuapp.com/
 
 
 
