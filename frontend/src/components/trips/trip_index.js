@@ -23,8 +23,9 @@ class TripIndex extends React.Component {
 
 displayDate(dates) {
 
-  if (dates !== null) {
+  if (!!dates) {
     let l = ''
+    console.log(dates)
     let d = dates.split("-")
     let month  = ""
     if (d[1] === '01' ){
