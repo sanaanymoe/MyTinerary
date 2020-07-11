@@ -21,6 +21,79 @@ class TripIndex extends React.Component {
     this.props.fetchTrips(this.props.currentUser.id);
   }
 
+displayDate(dates) {
+
+  if (dates !== null) {
+    let l = ''
+    let d = dates.split("-")
+    let month  = ""
+    if (d[1] === '01' ){
+
+   month = "Jan";
+
+} else if(d[1]=== '02'){
+     month = "Feb";
+  
+} else if(d[1]=== '03'){
+     month = "Feb"
+  
+}else if(d[1]=== '04'){
+     month = "Mar"
+  
+}else if(d[1]=== '05'){
+     month = "Apr"
+  
+}else if(d[1]=== '06'){
+    month = "May"
+  
+}else if(d[1]=== '07'){
+     month = "Jun"
+  
+}else if(d[1]=== '08'){
+     month = "Jul"
+  
+}else if(d[1]=== '09'){
+    month = "Aug"
+  
+}else if(d[1]=== '10'){
+     month = "Sep"
+  
+
+}else if(d[1]=== '11'){
+     month = "Oct"
+  
+  
+}else if(d[1]=== '11'){
+    month = "Nov"
+  
+  
+} else {
+
+     month = "Dec"
+} 
+if (d[2] === '1') {
+   l = "st"
+}
+  else if(d[2][0] === '2') {
+     l =  'nd'
+  
+  }
+  else if (d[2][0]=== '3'){
+     l = 'rd'
+  } else {
+    l = 'th'
+  }
+
+  const dat = d[2]+l+ " " + month + " "+d[0]
+   return dat
+} 
+
+  return null
+
+
+}
+
+
 changeVisibilty = (e) => {
     const item = document.getElementsByClassName('trip-item')
     Array.from(item).forEach((trip) => {if(e.currentTarget.id === trip.id){
@@ -89,6 +162,24 @@ changeVisibilty = (e) => {
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
+
+                        <li>{trip.flight.startLocation}</li>
+                        <li>{trip.flight.endLocation}</li>
+                 debugger
+                        <li>{this.displayDate(trip.flight.startDate)}</li>
+                        <li>{this.displayDate(trip.flight.endDate)}</li>
+                    </ul>
+                    <h2>Hotel</h2>
+                    <ul>
+                        <li>{trip.housing.location}</li>
+                        <li>{this.displayDate(trip.housing.startDate)}</li>
+                        <li>{this.displayDate(trip.housing.endDate)}</li>
+                    </ul>
+                    <h2>Event</h2>
+                    <ul>
+                        <li>{trip.event.location}</li>
+                        <li>{this.displayDate(trip.event.date)}</li>
+
                       <li>from {trip.flight.startLocation} to {trip.flight.endLocation}</li>
                       <li>{trip.flight.startDate}</li>
                       <li>{trip.flight.endDate}</li>
@@ -103,6 +194,7 @@ changeVisibilty = (e) => {
                     <ul>
                       <li>{trip.event.location}</li>
                       <li>{trip.event.date}</li>
+
                     </ul>
                   </div>
                 </div>
