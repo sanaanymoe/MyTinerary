@@ -7,6 +7,8 @@ export const receiveAllErrors = errors => {
     }
 }
 
+
+
 export const removeAllErrors = ()=> {
     return {
         type: REMOVE_ALL_ERRORS
