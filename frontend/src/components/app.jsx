@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useReducer } from 'react'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import { Switch, Route } from 'react-router-dom';
 //import { AuthRoute, ProtectedRoute } from '../util/route_util'
@@ -8,7 +8,7 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container'
 import TripContainer from './trips/trip_container'
-
+import UserProfile from './users/user'
 
 
 // import {Button} from 'react-bootstrap';
@@ -36,6 +36,7 @@ const App = () => (
       <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
       <ProtectedRoute exact path="/trip" component={TripIndexItem} />
       <ProtectedRoute exact path="/home" component={NavBarContainer} />
+      <ProtectedRoute exact path='/profile' component={UserProfile} />
     </Switch>
     <Route exact path="/" component={NavBarContainer} />
   </div>

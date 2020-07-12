@@ -52,23 +52,28 @@
 
 // export default MyCalendar;
 
-import React, { Component } from "react";
-import Calendar from "react-calendar";
+import React, { Component } from 'react'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import interactionPlugin from '@fullcalendar/interaction'
 
-class MyCalendar extends Component {
-  state = {
-    date: new Date(),
-  };
+export default class MyCalendar extends Component {
+  // declare any necessary functions such as handleDateClick, etc.
+handleEventClick(e){
+e.preventDefault();
+}
+handleEventDrop(){
 
-  onChange = (date) => this.setState({ date });
-
+}
   render() {
-    return (
-      <div>
-        <Calendar onChange={this.onChange} value={this.state.date} />
-      </div>
-    );
+    return <FullCalendar
+      defaultView="dayGridMonth"
+      plugins={[dayGridPlugin, interactionPlugin]}
+      editable={true}
+      eventDrop={this.handleEventDrop}
+      onClick={this.handleEventClick}
+      
+    />
   }
 }
 
-export default MyCalendar;
