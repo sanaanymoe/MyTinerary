@@ -19,4 +19,4 @@ const Root = ({ store }) => {
 };
 
 export default Root;
-window.axios = axios 
+

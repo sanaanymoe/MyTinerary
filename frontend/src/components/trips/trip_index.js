@@ -23,73 +23,76 @@ class TripIndex extends React.Component {
 
 displayDate(dates) {
 
-  if (!!dates) {
+
+  if (dates !== null &&  dates !== undefined) {
+
+  
     let l = ''
     console.log(dates)
     let d = dates.split("-")
     let month  = ""
     if (d[1] === '01' ){
 
-   month = "Jan";
+      month = "Jan";
 
-} else if(d[1]=== '02'){
-     month = "Feb";
-  
-} else if(d[1]=== '03'){
-     month = "Feb"
-  
-}else if(d[1]=== '04'){
-     month = "Mar"
-  
-}else if(d[1]=== '05'){
-     month = "Apr"
-  
-}else if(d[1]=== '06'){
-    month = "May"
-  
-}else if(d[1]=== '07'){
-     month = "Jun"
-  
-}else if(d[1]=== '08'){
-     month = "Jul"
-  
-}else if(d[1]=== '09'){
-    month = "Aug"
-  
-}else if(d[1]=== '10'){
-     month = "Sep"
-  
+    } else if(d[1]=== '02'){
+        month = "Feb";
+      
+    } else if(d[1]=== '03'){
+        month = "Feb"
+      
+    }else if(d[1]=== '04'){
+        month = "Mar"
+      
+    }else if(d[1]=== '05'){
+        month = "Apr"
+      
+    }else if(d[1]=== '06'){
+        month = "May"
+      
+    }else if(d[1]=== '07'){
+        month = "Jun"
+      
+    }else if(d[1]=== '08'){
+        month = "Jul"
+      
+    }else if(d[1]=== '09'){
+        month = "Aug"
+      
+    }else if(d[1]=== '10'){
+        month = "Sep"
+      
 
-}else if(d[1]=== '11'){
-     month = "Oct"
-  
-  
-}else if(d[1]=== '11'){
-    month = "Nov"
-  
-  
-} else {
+    }else if(d[1]=== '11'){
+        month = "Oct"
+      
+      
+    }else if(d[1]=== '11'){
+        month = "Nov"
+      
+      
+    } else {
 
-     month = "Dec"
-} 
-if (d[2] === '1') {
-   l = "st"
-}
-  else if(d[2][0] === '2') {
-     l =  'nd'
-  
-  }
-  else if (d[2][0]=== '3'){
-     l = 'rd'
-  } else {
-    l = 'th'
-  }
+        month = "Dec"
+    } 
+    if (d[2] === '1') {
+      l = "st"
+    }
+      else if(d[2][0] === '2') {
+        l =  'nd'
+      
+      }
+      else if (d[2][0]=== '3'){
+        l = 'rd'
+      } else {
+        l = 'th'
+      }
 
-  const dat = d[2]+l+ " " + month + " "+d[0]
-   return dat
-} 
+    const dat = d[2]+l+ " " + month + " "+d[0]
+    return dat
+  } 
 
-  return null
+  return ""
 
 
 }

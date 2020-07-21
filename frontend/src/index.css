@@ -123,3 +123,34 @@ label {
 .trip-item ul {
   margin: 5px;
 }
+
+.calender-box {
+  display: block; 
+  height: 100px;
+  width:100px;
+  background-color: bisque;
+}
+
+
+.fc-daygrid-day-frame:hover {
+background-color: rgba(255, 255, 255, 0.555);
+}
+
+.profile-outer {
+  display:block;
+
+  max-height:1000px ;
+  max-width:1000px ;
+}
+
+.profile-calender{
+  display:block; 
+  height:200px;
+  width:20px;
+
+}
+.profile-details {
+  display:block;
+  height:500px; 
+  width:300px;
+}
