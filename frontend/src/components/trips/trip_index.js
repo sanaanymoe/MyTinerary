@@ -22,15 +22,13 @@ class TripIndex extends React.Component {
   }
 
 displayDate(dates) {
-
-
-  if (dates !== null &&  dates !== undefined) {
-
   
+  if (!!dates) {
     let l = ''
     console.log(dates)
     let d = dates.split("-")
     let month  = ""
+    
     if (d[1] === '01' ){
 
       month = "Jan";
@@ -39,42 +37,37 @@ displayDate(dates) {
         month = "Feb";
       
     } else if(d[1]=== '03'){
-        month = "Feb"
-      
-    }else if(d[1]=== '04'){
         month = "Mar"
       
-    }else if(d[1]=== '05'){
+    }else if(d[1]=== '04'){
         month = "Apr"
       
-    }else if(d[1]=== '06'){
+    }else if(d[1]=== '05'){
         month = "May"
       
-    }else if(d[1]=== '07'){
+    }else if(d[1]=== '06'){
         month = "Jun"
       
-    }else if(d[1]=== '08'){
+    }else if(d[1]=== '07'){
         month = "Jul"
       
-    }else if(d[1]=== '09'){
+    }else if(d[1]=== '08'){
         month = "Aug"
       
-    }else if(d[1]=== '10'){
+    }else if(d[1]=== '09'){
         month = "Sep"
       
-
-    }else if(d[1]=== '11'){
+    }else if(d[1]=== '10'){
         month = "Oct"
       
-      
+
     }else if(d[1]=== '11'){
         month = "Nov"
       
-      
     } else {
-
         month = "Dec"
     } 
+    
     if (d[2] === '1') {
       l = "st"
     }
@@ -88,13 +81,11 @@ displayDate(dates) {
         l = 'th'
       }
 
-    const dat = d[2]+l+ " " + month + " "+d[0]
+    const dat = month + " " + d[2][0] + 1 + " "+d[0]
     return dat
+    
   } 
-
   return ""
-
-
 }
 
 
@@ -166,10 +157,7 @@ changeVisibilty = (e) => {
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
-
-                        <li>{trip.flight.startLocation}</li>
-                        <li>{trip.flight.endLocation}</li>
-                 debugger
+                        <li>{trip.flight.startLocation} to {trip.flight.endLocation}</li>
                         <li>{this.displayDate(trip.flight.startDate)}</li>
                         <li>{this.displayDate(trip.flight.endDate)}</li>
                     </ul>
@@ -184,23 +172,9 @@ changeVisibilty = (e) => {
                         <li>{trip.event.location}</li>
                         <li>{this.displayDate(trip.event.date)}</li>
 
-                      <li>from {trip.flight.startLocation} to {trip.flight.endLocation}</li>
-                      <li>{trip.flight.startDate}</li>
-                      <li>{trip.flight.endDate}</li>
-                    </ul>
-                    <h2>Hotel</h2>
-                    <ul>
-                      <li>{trip.housing.location}</li>
-                      <li>{trip.housing.startDate}</li>
-                      <li>{trip.housing.endDate}</li>
-                    </ul>
-                    <h2>Event</h2>
-                    <ul>
-                      <li>{trip.event.location}</li>
                       
-                      <li>{trip.event.date}</li>
-
                     </ul>
+                    
                   </div>
                 </div>
               ))}
