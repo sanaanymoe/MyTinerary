@@ -71,11 +71,10 @@ displayDate(dates) {
 
         month = "Dec"
     } 
-
-    if (d[2][0] === '1') {
+    if (d[2] === '1') {
       l = "st"
     }
-      else if(d[2] === '2') {
+      else if(d[2][0] === '2') {
         l =  'nd'
       
       }
@@ -85,9 +84,9 @@ displayDate(dates) {
         l = 'th'
       }
 
-      const dat = d[2]+l+ " " + month + " "+d[0]
-      return dat
-    } 
+    const dat = d[2]+l+ " " + month + " "+d[0]
+    return dat
+  } 
 
   return ""
 

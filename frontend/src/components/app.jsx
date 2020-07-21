@@ -36,7 +36,8 @@ const App = () => (
       <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
       <ProtectedRoute exact path="/trip" component={TripIndexItem} />
       <ProtectedRoute exact path="/home" component={NavBarContainer} />
-      <ProtectedRoute exact path='/profile' component={UserProfile} />
+      <ProtectedRoute exact path='/UserProfile/:id' component={UserProfile} />
+
     </Switch>
     <Route exact path="/" component={NavBarContainer} />
   </div>

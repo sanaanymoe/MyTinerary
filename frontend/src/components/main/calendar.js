@@ -56,12 +56,15 @@ import React, { Component } from 'react'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import interactionPlugin from '@fullcalendar/interaction'
+import { useHistory} from 'react-router-dom';
 
 export default class MyCalendar extends Component {
   // declare any necessary functions such as handleDateClick, etc.
-handleEventClick(e){
-e.preventDefault();
-}
+  constructor(props){
+    super(props)
+  }
+
+
 handleEventDrop(){
 
 }
@@ -71,7 +74,7 @@ handleEventDrop(){
       plugins={[dayGridPlugin, interactionPlugin]}
       editable={true}
       eventDrop={this.handleEventDrop}
-      onClick={this.handleEventClick}
+      dateClick={this.handleDateClick}
       
     />
   }

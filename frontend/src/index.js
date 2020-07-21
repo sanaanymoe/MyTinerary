@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getTrips = receiveTrips;
   window.makeTrips = makeTrip;
   window.getUsers = receiveUsers;
-
-
+  window.store = store 
+  
 });
 
 
