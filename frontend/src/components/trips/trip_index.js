@@ -81,7 +81,7 @@ displayDate(dates) {
         l = 'th'
       }
 
-    const dat = month + " " + d[2][0] + 1 + " "+d[0]
+    const dat = month + " " + d[2][0] + 1 + " " + d[0]
     return dat
     
   } 
@@ -146,7 +146,7 @@ changeVisibilty = (e) => {
               {trips.map((trip) => (
                 <div className="trip-index">
                   <Button
-                    className="trip-btn"
+                    className="trip-btn" 
                     variant="secondary"
                     id={trip._id}
                     onMouseOver={this.pointer}
