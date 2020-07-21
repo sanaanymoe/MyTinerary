@@ -165,7 +165,7 @@ changeVisibilty = (e) => {
 
                         <li>{trip.flight.startLocation}</li>
                         <li>{trip.flight.endLocation}</li>
-                 debugger
+    
                         <li>{this.displayDate(trip.flight.startDate)}</li>
                         <li>{this.displayDate(trip.flight.endDate)}</li>
                     </ul>
