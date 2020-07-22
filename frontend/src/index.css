@@ -7,16 +7,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+img{
+  height: 150px;
+  width: 200px;
+}
+
+.navbar{
+  padding: 0px;
+  height: 70px;
+}
+
+.fc-media-screen{
+  margin-top: 50px;
+    height: 420px;
+}
+
+.sub-main{
+  /* background-image: url(logo_transparent.png); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+    display: flex;
+        flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 body{
-  background-image: url(flight.jpg);
+  /* background-image: url(flight.jpg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-}
+ 
+} 
 button {
   margin: 20px;
 }
@@ -28,6 +56,7 @@ h3 {
 
 .login-signup-buttons {
     display: flex;
+
     align-items: center;
     justify-content: center;
     flex-direction: column;

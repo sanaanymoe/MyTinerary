@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
+import logo from '../logo_transparent.png'
 //import './navbar.css'
 import { Button, Nav, NavDropdown, Navbar, Form, FormControl } from "react-bootstrap";
 import MyCalendar from "../main/calendar";
@@ -29,12 +30,14 @@ class NavBar extends React.Component {
         <div>
           <div className="main-div">
             <Navbar bg="light" expand="lg">
-              <Navbar.Brand href="#home">MyTinerary</Navbar.Brand>
+              <Navbar.Brand href="#home">
+                <img src={logo}></img>
+              </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
                   <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link href="#link">Link</Nav.Link>
+                  {/* <Nav.Link href="#link">Link</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">
                       Action
@@ -49,7 +52,7 @@ class NavBar extends React.Component {
                     <NavDropdown.Item href="#action/3.4">
                       Separated link
                     </NavDropdown.Item>
-                  </NavDropdown>
+                  </NavDropdown> */}
                 </Nav>
                 <Form inline>
                   <FormControl
@@ -62,20 +65,25 @@ class NavBar extends React.Component {
               </Navbar.Collapse>
             </Navbar>
           </div>
-          <div>
-            <Link to={"/trips"}>
-              <Button variant="primary">My Trips</Button>{" "}
-            </Link>
-            <Link to={"/profile"}>
-              <Button variant="secondary">Profile</Button>{" "}
-            </Link>
-            <Link to={"/new_trip"}>
-              <Button variant="success">New Trip</Button>{" "}
-            </Link>
-            <Button onClick={this.logoutUser} variant="danger">
-              Logout
-            </Button>{" "}
-          <MyCalendar />
+          <div className="sub-main">
+            <div className="buttons">
+
+              <Link to={"/trips"}>
+                <Button variant="primary">My Trips</Button>{" "}
+              </Link>
+              <Link to={"/profile"}>
+                <Button variant="secondary">Profile</Button>{" "}
+              </Link>
+              <Link to={"/new_trip"}>
+                <Button variant="success">New Trip</Button>{" "}
+              </Link>
+              <Button onClick={this.logoutUser} variant="danger">
+                Logout
+              </Button>{" "}
+            </div>
+            <span className="calendar">
+              <MyCalendar />
+            </span>
           </div>
         </div>
       );
