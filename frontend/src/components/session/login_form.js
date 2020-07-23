@@ -58,6 +58,7 @@ class LoginForm extends React.Component {
 
   // Render the session errors if there are any
   renderErrors() {
+
     let errors = Object.values(this.props.errors)
       return (
         <ul>
@@ -70,6 +71,11 @@ class LoginForm extends React.Component {
       );
     }
   
+
+
+  componentWillUnmount() {
+    this.props.removeErrors()
+  }
 
   render() {
     return (
@@ -105,6 +111,7 @@ class LoginForm extends React.Component {
             <Button variant="primary" onClick={this.demoLoginHandler}>
             Login As Demo User
           </Button>
+
           </div>
         </form>
       </div>

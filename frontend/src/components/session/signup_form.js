@@ -55,9 +55,9 @@ class SignupForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>
-            {this.state.errors[error]}
+            {error}
           </li>
         ))}
       </ul>
@@ -107,7 +107,7 @@ class SignupForm extends React.Component {
             <Link to={"/login"}>
               <Button variant="primary">Login instead</Button>
             </Link>
-            {/* {this.renderErrors()} */}
+            {this.renderErrors()}
           </div>
         </form>
 

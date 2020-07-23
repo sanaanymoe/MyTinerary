@@ -5,15 +5,15 @@ module.exports = function validateTripInput(data) {
     let errors = {};
     // debugger
     if( ( !Object.keys(data).includes("flight") ) ) {
-        errors.flight = 'No flight data inputed'
+        errors.flight = 'No flight data input'
     }
 
     if( ( !Object.keys(data).includes("housing") ) ) {
-        errors.housing = 'No housing data inputed'
+        errors.housing = 'No housing data input'
     }
 
     if( ( !Object.keys(data).includes("event") ) ) {
-        errors.event = 'No event data inputed'
+        errors.event = 'No event data input'
     }
 
     return {
