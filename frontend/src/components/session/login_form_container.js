@@ -5,6 +5,10 @@ import LoginForm from './login_form';
 const mapStateToProps = (state) => {
   return {
     //errors: state.errors.session
+    demoUser: {
+      email: "mo@gmail.com",
+      password: "mo12345"
+    }
   };
 };
 

@@ -1,6 +1,7 @@
 import React, { useReducer } from 'react'
 import { AuthRoute, ProtectedRoute } from '../util/route_util'
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
+import logo from './logo_transparent.png'
 //import { AuthRoute, ProtectedRoute } from '../util/route_util'
 
 import MainPage from './main/main_page';
@@ -28,7 +29,9 @@ const App = () => (
       <Button variant="dark">Dark</Button> <Button variant="link">Link</Button>
     </> */}
     {/* <NavBarContainer /> */}
-    
+    {/* <Link to="/">
+      <img src={logo}></img>
+    </Link> */}
     <Switch>
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
@@ -36,8 +39,7 @@ const App = () => (
       <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
       <ProtectedRoute exact path="/trip" component={TripIndexItem} />
       <ProtectedRoute exact path="/home" component={NavBarContainer} />
-      <ProtectedRoute exact path='/UserProfile/:id' component={UserProfile} />
-
+      <ProtectedRoute exact path="/UserProfile/:id" component={UserProfile} />
     </Switch>
     <Route exact path="/" component={NavBarContainer} />
   </div>

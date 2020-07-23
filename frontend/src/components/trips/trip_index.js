@@ -8,6 +8,7 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import logo from "../logo_transparent.png";
 
 class TripIndex extends React.Component {
     constructor(props) {
@@ -21,6 +22,7 @@ class TripIndex extends React.Component {
     this.props.fetchTrips(this.props.currentUser.id);
   }
 
+
 displayDate(dates) {
   
   if (!!dates) {
@@ -31,11 +33,13 @@ displayDate(dates) {
     
     if (d[1] === '01' ){
 
+
       month = "Jan";
 
     } else if(d[1]=== '02'){
         month = "Feb";
       
+
     } else if(d[1]=== '03'){
         month = "Mar"
       
@@ -73,13 +77,6 @@ displayDate(dates) {
     }
       else if(d[2][0] === '2') {
         l =  'nd'
-      
-      }
-      else if (d[2][0]=== '3'){
-        l = 'rd'
-      } else {
-        l = 'th'
-      }
 
     const dat = month + " " + d[2][0] + 1 + " " + d[0]
     return dat
@@ -88,6 +85,7 @@ displayDate(dates) {
   return ""
 }
 
+}
 
 changeVisibilty = (e) => {
     const item = document.getElementsByClassName('trip-item')
@@ -103,33 +101,24 @@ changeVisibilty = (e) => {
 
     render() { 
       const { isVisible } = this.state;
-      const trips = this.props.trips[0] || []
-        //debugger
+      if (!this.props.trips[0]){
+        // debugger
+        return null
+      } else{
+        const trips = this.props.trips[0]
+        // debugger
         return (
           <div>
             <div className="main-div">
               <Navbar bg="light" expand="lg">
-                <Navbar.Brand href="#home">MyTinerary</Navbar.Brand>
+                <Navbar.Brand href="#home">
+                  <img src={logo}></img>
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="mr-auto">
                     <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
-                    <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                      <NavDropdown.Item href="#action/3.1">
-                        Action
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.2">
-                        Another action
-                      </NavDropdown.Item>
-                      <NavDropdown.Item href="#action/3.3">
-                        Something
-                      </NavDropdown.Item>
-                      <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action/3.4">
-                        Separated link
-                      </NavDropdown.Item>
-                    </NavDropdown>
+                    
                   </Nav>
                   <Form inline>
                     <FormControl
@@ -157,22 +146,24 @@ changeVisibilty = (e) => {
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
+
                         <li>{trip.flight.startLocation} to {trip.flight.endLocation}</li>
                         <li>{this.displayDate(trip.flight.startDate)}</li>
                         <li>{this.displayDate(trip.flight.endDate)}</li>
+
                     </ul>
                     <h2>Hotel</h2>
                     <ul>
-                        <li>{trip.housing.location}</li>
-                        <li>{this.displayDate(trip.housing.startDate)}</li>
-                        <li>{this.displayDate(trip.housing.endDate)}</li>
+                      <li>{trip.housing.location}</li>
+                      {/* <li>{this.displayDate(trip.housing.startDate)}</li>
+                        <li>{this.displayDate(trip.housing.endDate)}</li> */}
                     </ul>
                     <h2>Event</h2>
                     <ul>
-                        <li>{trip.event.location}</li>
-                        <li>{this.displayDate(trip.event.date)}</li>
+                      <li>{trip.event.location}</li>
+                      {/* <li>{this.displayDate(trip.event.date)}</li> */}
 
-                      
+
                     </ul>
                     
                   </div>
@@ -180,11 +171,10 @@ changeVisibilty = (e) => {
               ))}
             </div>
           </div>
-        );
+        );}
     }
-};
+}
 
 export default TripIndex;
 
-{/* <li><Link to={`/api/trips/${trip.id}`}>{trip.title}</Link></li> */}
 

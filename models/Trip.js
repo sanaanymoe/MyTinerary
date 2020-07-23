@@ -88,7 +88,8 @@ var Trip = mongoose.model("trip", {
     startLocation: String,
     endLocation: String,
     startDate: Date,
-    endDate: Date
+    endDate: Date,
+    carrier: String
   },
   housing: {
     location: String,
