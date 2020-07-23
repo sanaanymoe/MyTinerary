@@ -41,8 +41,12 @@ class SignupForm extends React.Component {
       password: this.state.password,
       password2: this.state.password2
     };
+    this.signupLogin(user)
+  }
 
-    this.props.signup(user, this.props.history);
+  signupLogin = async (user) => {
+    await this.props.signup(user)
+    this.props.login(user)
   }
 
   renderErrors() {

@@ -42,8 +42,6 @@ router.post("/newtrip",
             return res.status(400).json(errors);
         }
 
-
-
         const getGeo = async (req) => {
             // let x = null; 
             try {
@@ -143,8 +141,7 @@ router.post("/newtrip",
             let hotel = await getHousing(location)
             let event = await getEvent(location)
             let carrier = await getFlight(req.body.flight.startDate, req.body.flight.endDate, req.body.flight.endLocation, req.body.flight.startLocation)
-            // console.log(hotel)
-            // return hotel
+            // console.log(location, hotel, event, carrier)
             const newTrip = new Trip({
                 user: req.user.id,
                 //   geoLocation: payload.data.results[0].geometry.location, 
@@ -173,7 +170,7 @@ router.post("/newtrip",
                     res.json(trip)
                 })
             // console.log(location, hotel, event)
-            console.log(flight)
+            console.log(newTrip)
         }
 
         creatorFunc()
