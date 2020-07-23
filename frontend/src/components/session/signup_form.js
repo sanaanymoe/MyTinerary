@@ -48,15 +48,18 @@ class SignupForm extends React.Component {
 
 
   signupLogin = async (user) => {
+  
     await this.props.signup(user)
-    this.props.login(user)
+    if (this.props.errors.length === 0){
+      this.props.login(user)
+    }
   }
 
   renderErrors() {
     return (
       <ul>
         {Object.values(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>
+          <li key={`error-${i}`} className="error-list">
             {error}
           </li>
         ))}
@@ -99,15 +102,15 @@ class SignupForm extends React.Component {
               value={this.state.password2}
               onChange={this.update("password2")}
               placeholder="Confirm Password"
-            />
+              />
             <br />
+              {this.renderErrors()}
             <Button variant="success" type="submit">
               Submit
             </Button>
             <Link to={"/login"}>
               <Button variant="primary">Login instead</Button>
             </Link>
-            {this.renderErrors()}
           </div>
         </form>
 
