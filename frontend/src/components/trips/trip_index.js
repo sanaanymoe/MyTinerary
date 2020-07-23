@@ -85,7 +85,7 @@ displayDate(dates) {
   return ""
 }
 
-
+}
 
 changeVisibilty = (e) => {
     const item = document.getElementsByClassName('trip-item')
@@ -102,10 +102,11 @@ changeVisibilty = (e) => {
     render() { 
       const { isVisible } = this.state;
       if (!this.props.trips[0]){
+        // debugger
         return null
       } else{
         const trips = this.props.trips[0]
-        //debugger
+        // debugger
         return (
           <div>
             <div className="main-div">
@@ -190,6 +191,4 @@ changeVisibilty = (e) => {
 };
 
 export default TripIndex;
-
-{/* <li><Link to={`/api/trips/${trip.id}`}>{trip.title}</Link></li> */}
 
