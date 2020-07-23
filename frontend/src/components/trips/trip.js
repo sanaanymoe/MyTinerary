@@ -138,6 +138,7 @@ class Trip extends React.Component {
               Return Date
               <input
                 type="date"
+                placeholder="date"
                 name="endDate"
                 onChange={this.handleFlightChange}
                 className="flight-entry-tab"

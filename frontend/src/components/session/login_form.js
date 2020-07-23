@@ -28,6 +28,10 @@ class LoginForm extends React.Component {
     this.setState({ errors: nextProps.errors })
   }
 
+  componentWillUnmount(){
+    this.props.removeErrors();
+  }
+
   // Handle field updates (called in the render method)
   update(field) {
     return e => this.setState({
@@ -54,16 +58,20 @@ class LoginForm extends React.Component {
 
   // Render the session errors if there are any
   renderErrors() {
-    return (
-      <ul>
-        {Object.values(this.props.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+
+    let errors = Object.values(this.props.errors)
+      return (
+        <ul>
+          {errors.map((error, i) => (
+            <li key={`error-${i}`} className="error-list">
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
+  
+
 
   componentWillUnmount() {
     this.props.removeErrors()
@@ -91,6 +99,7 @@ class LoginForm extends React.Component {
               placeholder="Password"
             />
             <br />
+            {this.renderErrors()}
             <Button variant="success" type="submit">
               Submit
             </Button>
@@ -100,9 +109,9 @@ class LoginForm extends React.Component {
             </Link>
 
             <Button variant="primary" onClick={this.demoLoginHandler}>
-            Demo User
+            Login As Demo User
           </Button>
-            {this.renderErrors()}
+
           </div>
         </form>
       </div>
