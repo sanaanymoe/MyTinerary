@@ -114,6 +114,13 @@ h1{
   align-items: center;
   justify-content: center;
 }
+
+.error-list{
+    color: maroon;
+    list-style: none;
+    text-align: center;
+}
+
  .title-entry-tab{
    margin-left: 97px;
  }
