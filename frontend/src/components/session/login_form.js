@@ -47,6 +47,11 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
+  demoLoginHandler(event) {
+    event.preventDefault();
+    this.props.login(this.props.demoUser);
+  }
+
   // Render the session errors if there are any
   renderErrors() {
     return (
@@ -89,6 +94,10 @@ class LoginForm extends React.Component {
               <Button variant="primary">Signup instead</Button>
               {"  "}
             </Link>
+
+            <Button variant="primary" onClick={this.demoLoginHandler}>
+            Demo User
+          </Button>
             {/* {this.renderErrors()} */}
           </div>
         </form>

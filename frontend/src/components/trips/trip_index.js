@@ -188,7 +188,8 @@ changeVisibilty = (e) => {
           </div>
         );}
     }
-};
+}
 
 export default TripIndex;
+
 
