@@ -102,10 +102,11 @@ changeVisibilty = (e) => {
     render() { 
       const { isVisible } = this.state;
       if (!this.props.trips[0]){
+        // debugger
         return null
       } else{
         const trips = this.props.trips[0]
-        //debugger
+        // debugger
         return (
           <div>
             <div className="main-div">
