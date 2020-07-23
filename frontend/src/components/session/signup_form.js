@@ -49,7 +49,9 @@ class SignupForm extends React.Component {
 
   signupLogin = async (user) => {
     await this.props.signup(user)
+    if (this.props.errors.length === 0) {
     this.props.login(user)
+    }
   }
 
   renderErrors() {
@@ -62,6 +64,10 @@ class SignupForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  componentWillUnmount() {
+    this.props.removeErrors();
   }
 
   render() {
