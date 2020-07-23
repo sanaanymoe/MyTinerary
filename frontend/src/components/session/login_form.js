@@ -96,7 +96,7 @@ class LoginForm extends React.Component {
             </Link>
 
             <Button variant="primary" onClick={this.demoLoginHandler}>
-            Demo User
+            Login As Demo User
           </Button>
             {/* {this.renderErrors()} */}
           </div>

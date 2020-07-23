@@ -12,7 +12,8 @@ class SignupForm extends React.Component {
       username: '',
       password: '',
       password2: '',
-      errors: {}
+      errors: {},
+      isAuthenticated: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -23,8 +24,9 @@ class SignupForm extends React.Component {
     if (nextProps.signedIn === true) {
       this.props.history.push('/login');
     }
-
+    
     this.setState({ errors: nextProps.errors })
+    
   }
 
   update(field) {
@@ -42,7 +44,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
-    this.props.signup(user, this.props.history);
+    this.props.signup(user);
   }
 
   renderErrors() {

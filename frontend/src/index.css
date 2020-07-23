@@ -115,7 +115,11 @@ h1{
   justify-content: center;
 }
  .title-entry-tab{
-   margin-left: 80px;
+   margin-left: 97px;
+ }
+
+ .flight-return{
+   margin-left: 30px;
  }
 
  .flight-entry-tab{
