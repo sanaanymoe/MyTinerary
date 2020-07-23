@@ -37,8 +37,8 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/new_trip" component={TripContainer} />
       <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
-      <ProtectedRoute exact path="/trip" component={TripIndexItem} />
-      <ProtectedRoute exact path="/home" component={NavBarContainer} />
+      {/* <ProtectedRoute exact path="/trip" component={TripIndexItem} /> */}
+      {/* <Route exact path="/home" component={NavBarContainer} /> */}
       <ProtectedRoute exact path="/UserProfile/:id" component={UserProfile} />
     </Switch>
     <Route exact path="/" component={NavBarContainer} />

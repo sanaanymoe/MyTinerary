@@ -7,9 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.flight-detail-entry {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 img{
   height: 150px;
   width: 200px;
+}
+
+#sign-up-img{
+  margin-left: 50px;
 }
 
 .navbar{
@@ -39,9 +50,10 @@ code {
     monospace;
 }
 body{
-  /* background-image: url(flight.jpg); */
+  background-image: url(flight-landing.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  height: 100%;
+  /* background-position: center; */
   background-size: cover;
  
 } 
@@ -102,11 +114,18 @@ h1{
   align-items: center;
   justify-content: center;
 }
+ .title-entry-tab{
+   margin-left: 80px;
+ }
 
+ .flight-entry-tab{
+   margin-left: 5px;
+ }
 
 
 label {
-  background-color: wheat;
+  /* background-color: wheat; */
+  font-weight: 700;
 }
 
 .trip-btn:hover {
