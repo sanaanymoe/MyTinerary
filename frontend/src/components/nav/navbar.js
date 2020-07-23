@@ -30,13 +30,13 @@ class NavBar extends React.Component {
         <div>
           <div className="main-div">
             <Navbar bg="light" expand="lg">
-              <Navbar.Brand href="#home">
+              <Navbar.Brand href="#/">
                 <img src={logo}></img>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">
-                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#/">Home</Nav.Link>
                   {/* <Nav.Link href="#link">Link</Nav.Link>
                   <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">
@@ -90,16 +90,24 @@ class NavBar extends React.Component {
     } else {
       return (
         <div className="login-signup-buttons">
-          <Link to={"/signup"}>
-            <Button variant="primary">Signup</Button>
-            {"  "}
-          </Link>
-          <Link to={"/login"}>
-            <Button variant="primary">Login</Button>
-          </Link>
-          <Button variant="primary" onClick={this.demoLoginHandler}>
-            Demo User
-          </Button>
+
+          <Navbar.Brand href="#/">
+              <img src={logo}></img>
+            </Navbar.Brand>
+            <h1>Welcome to MyTinerary </h1>
+            <h1>Signup/Login and let us plan your Trip</h1>
+            <div>
+              <Link to={"/signup"}>
+                <Button variant="primary">Signup</Button>
+                {"  "}
+              </Link>
+              <Link to={"/login"}>
+                <Button variant="primary">Login</Button>
+              </Link>
+              <Button variant="primary" onClick={this.demoLoginHandler}>
+                Demo User
+              </Button>
+            </div>
         </div>
       );
     }

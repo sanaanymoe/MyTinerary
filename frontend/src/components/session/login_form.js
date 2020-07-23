@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { withRouter } from 'react-router-dom';
-import { Button } from "react-bootstrap";
+import { Button, Navbar } from "react-bootstrap";
+import logo from '../logo_transparent.png'
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -69,6 +70,9 @@ class LoginForm extends React.Component {
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="login-form">
+          <Navbar.Brand href="#/">
+            <img src={logo}></img>
+          </Navbar.Brand>
             <input
               type="text"
               value={this.state.email}

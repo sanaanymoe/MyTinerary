@@ -7,10 +7,8 @@ import {
   Form,
   FormControl,
 } from "react-bootstrap";
+import logo from '../logo_transparent.png'
 
-// import FlightContainer from '../flights/flight'
-// import HouseContainer from '../housing/house'
-// import EventContainer from '../events/event'
 
 class Trip extends React.Component {
   constructor(props) {
@@ -62,15 +60,15 @@ class Trip extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="main-div">
+      <div className="main-div">
+        <div>
           <Navbar bg="light" expand="lg">
-            <Navbar.Brand href="#home">MyTinerary</Navbar.Brand>
+            <Navbar.Brand href="#/"><img src={logo}></img></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#link">Link</Nav.Link>
+                <Nav.Link href="#/">Home</Nav.Link>
+                {/* <Nav.Link href="#link">Link</Nav.Link>
                 <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.2">
@@ -83,7 +81,7 @@ class Trip extends React.Component {
                   <NavDropdown.Item href="#action/3.4">
                     Separated link
                   </NavDropdown.Item>
-                </NavDropdown>
+                </NavDropdown> */}
               </Nav>
               <Form inline>
                 <FormControl
@@ -98,16 +96,17 @@ class Trip extends React.Component {
         </div>
         <div className="trip-container">
           <form onSubmit={this.handleSubmit} className="flight-detail-entry">
-            <h2>Trip Name</h2>
-            <label>
+            <h2>New Trip!</h2><br></br>
+            <label>Title   
               <input
                 type="text"
                 name="title"
                 onChange={this.handleTitleChange}
                 className="title-entry-tab"
+          
               />
-            </label>
-            <h2>Flights</h2>
+            </label><br></br>
+         
             <label>
               Departure City
               <input
@@ -116,7 +115,7 @@ class Trip extends React.Component {
                 onChange={this.handleFlightChange}
                 className="flight-entry-tab"
               />
-            </label>
+            </label> <br></br>
             <label>
               Destination City
               <input
@@ -125,7 +124,7 @@ class Trip extends React.Component {
                 onChange={this.handleFlightChange}
                 className="flight-entry-tab"
               />
-            </label>
+            </label><br></br>
             <label>
               Departure Date
               <input
@@ -134,7 +133,7 @@ class Trip extends React.Component {
                 onChange={this.handleFlightChange}
                 className="flight-entry-tab"
               />
-            </label>
+            </label><br></br>
             <label>
               Return Date
               <input
@@ -143,57 +142,9 @@ class Trip extends React.Component {
                 onChange={this.handleFlightChange}
                 className="flight-entry-tab"
               />
-            </label>
-
-            <h2>Hotels</h2>
-            <label>
-              Location
-              <input
-                type="text"
-                name="location"
-                onChange={this.handleHousingChange}
-                className="hotel-details-input"
-              ></input>
-            </label>
-            <label>
-              Start Date
-              <input
-                type="date"
-                name="startDate"
-                onChange={this.handleHousingChange}
-                className="hotel-details-input"
-              ></input>
-            </label>
-            <label>
-              End Date
-              <input
-                type="date"
-                name="endDate"
-                onChange={this.handleHousingChange}
-                className="hotel-details-input"
-              ></input>
-            </label>
-
-            <h2>Events</h2>
-            <label>
-              Location
-              <input
-                type="text"
-                name="location"
-                onChange={this.handleEventChange}
-                className="event-entry-tab"
-              />
-            </label>
-            <label>
-              Date
-              <input
-                type="date"
-                name="date"
-                onChange={this.handleEventChange}
-                className="event-entry-tab"
-              />
-            </label>
-            <input type="submit" value="Enter" />
+            </label><br></br>
+            <Button variant="primary" type="submit">Enter</Button>{" "}
+            
           </form>
         </div>
       </div>
