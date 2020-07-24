@@ -6,7 +6,8 @@ export const tripReducer = (state={}, action)=> {
      const nextState = Object.assign({}, state)
       switch(action.type) {
          case RECEIVE_TRIP: 
-            return nextState[action.trip.id] = action.trip
+            nextState[action.trip.id] = action.trip;
+            return nextState
          case RECEIVE_TRIPS: 
             return action.trips
         default: 
