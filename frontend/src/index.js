@@ -9,7 +9,7 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/api/session_api_util';
 
 
-import  {getHotels} from './actions/housing_actions'
+
 
 import { logout, login, signup, receiveCurrentUser } from './actions/session_actions';
 import { receiveTrips, makeTrip } from './actions/trip_actions';
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Render our root component and pass in the store as a prop
 
   
-  window.getHotels = getHotels;
+ 
   window.getState = store.getState
 
 

@@ -16,6 +16,7 @@ class LoginForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.demoLoginHandler = this.demoLoginHandler.bind(this);
   }
 
   // Once the user has been authenticated, redirect to the trip page
@@ -43,10 +44,11 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
-      email: this.state.email,
-      password: this.state.password
-    };
+    // let user = {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // };
+    const user = Object.assign({}, this.state)
 
     this.props.login(user);
   }
