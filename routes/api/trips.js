@@ -151,7 +151,7 @@ router.post("/newtrip",
                     endLocation: req.body.flight.endLocation,
                     startDate: req.body.flight.startDate,
                     endDate: req.body.flight.endDate,
-                    carrier
+                    carrier: carrier
                 },
                 housing: {
                     location: hotel,

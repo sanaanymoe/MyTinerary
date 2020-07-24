@@ -44,10 +44,11 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    let user = {
-      email: this.state.email,
-      password: this.state.password
-    };
+    // let user = {
+    //   email: this.state.email,
+    //   password: this.state.password
+    // };
+    const user = Object.assign({}, this.state)
 
     this.props.login(user);
   }
