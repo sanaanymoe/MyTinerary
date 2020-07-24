@@ -170,7 +170,7 @@ router.post("/newtrip",
                     res.json(trip)
                 })
             // console.log(location, hotel, event)
-            console.log(newTrip)
+            // console.log(newTrip)
         }
 
         creatorFunc()
