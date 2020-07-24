@@ -56,6 +56,7 @@ class Trip extends React.Component {
     e.preventDefault();
     const trip = Object.assign({}, this.state);
     this.props.makeTrip(trip)
+    
   }
 
   render() {

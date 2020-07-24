@@ -7,6 +7,7 @@ export const tripReducer = (state={}, action)=> {
       switch(action.type) {
          case RECEIVE_TRIP: 
             nextState[action.trip.id] = action.trip;
+
             return nextState
          case RECEIVE_TRIPS: 
             return action.trips

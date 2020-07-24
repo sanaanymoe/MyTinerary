@@ -21,6 +21,12 @@ export const makeTrip = trip => dispatch => {
   )))
 };
 
+export const fetchTrips = () => dispatch => (
+  APIUtil.getTrips()
+    .then(trips => dispatch(receiveTrips(trips)))
+    .catch(err => console.log(err))
+);
+
 export const fetchUserTrips = (id) => dispatch => {
   return (
     APIUtil.getUserTrips(id)
