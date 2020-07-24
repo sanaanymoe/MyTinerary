@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 const axios = require("axios")
-const keys = require('../../config/keys_dev')
+const keys = require('../../config/keys')
 
 const Trip = require('../../models/Trip');
 const validateTripInput = require('../../validation/trips');
