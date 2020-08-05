@@ -10,6 +10,8 @@ import {
 } from "react-bootstrap";
 import logo from "../logo_transparent.png";
 
+import MyCalendar from '../main/calendar'
+
 class TripIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -131,10 +133,11 @@ changeVisibilty = (e) => {
               </Navbar>
             </div>
             <div className="grid-container">
+        
               {trips.map((trip) => (
                 <div className="trip-index">
                   <Button
-                    className="trip-btn" 
+                    className="trip-btn"
                     variant="secondary"
                     id={trip._id}
                     onMouseOver={this.pointer}
@@ -145,12 +148,12 @@ changeVisibilty = (e) => {
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
-
-                        <li>{trip.flight.startLocation} to {trip.flight.endLocation}</li>
-                        <li>{this.displayDate(trip.flight.startDate)}</li>
-                        <li>{this.displayDate(trip.flight.endDate)}</li>
-                        <li>{trip.flight.carrier}</li>
-
+                      <li>
+                        {trip.flight.startLocation} to {trip.flight.endLocation}
+                      </li>
+                      <li>{this.displayDate(trip.flight.startDate)}</li>
+                      <li>{this.displayDate(trip.flight.endDate)}</li>
+                      <li>{trip.flight.carrier}</li>
                     </ul>
                     <h2>Hotel</h2>
                     <ul>
@@ -162,10 +165,7 @@ changeVisibilty = (e) => {
                     <ul>
                       <li>{trip.event.location}</li>
                       {/* <li>{this.displayDate(trip.event.date)}</li> */}
-
-
                     </ul>
-                    
                   </div>
                 </div>
               ))}

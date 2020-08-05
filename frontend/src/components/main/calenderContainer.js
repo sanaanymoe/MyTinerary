@@ -1,16 +1,20 @@
 import { connect } from 'react-redux';
 import { getUserTrips } from '../../util/api/trip_api_util';
-import  Calender from './calendar'
-const mapst = (state) => {
+import MyCalendar from "./calendar";
+import {fetchUserTrips} from '../../actions/trip_actions'
+const mstp = (state) => {
     return {
-        id : state.session.user.id
-    }
+      trips: Object.values(state.entities.trips),
+      id: state.session.user.id,
+    };
 }
 
- const mapdt = dispatch => {
+ const mdtp = dispatch => {
+     debugger
     return {
-        getTrips : (id )=> dispatch(getUserTrips(id))
-    }
+    //   getTrips: (id) => dispatch(getUserTrips(id)),
+      fetchTrips: (id) => dispatch(fetchUserTrips(id))
+    };
 }
 
-export default connect(mapst, mapdt)(Calender)
+export default connect(mstp, mdtp)(MyCalendar);
