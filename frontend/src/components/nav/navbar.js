@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import logo from '../logo_transparent.png'
 //import './navbar.css'
 import { Button, Nav, NavDropdown, Navbar, Form, FormControl } from "react-bootstrap";
-import MyCalendar from "../main/calendar";
+import MyCalendarContainer from "../main/calenderContainer";
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -51,7 +51,6 @@ class NavBar extends React.Component {
           </div>
           <div className="sub-main">
             <div className="buttons">
-
               <Link to={"/trips"}>
                 <Button variant="primary">My Trips</Button>{" "}
               </Link>
@@ -66,7 +65,7 @@ class NavBar extends React.Component {
               </Button>{" "}
             </div>
             <span className="calendar">
-              <MyCalendar />
+              <MyCalendarContainer />
             </span>
           </div>
         </div>
