@@ -102,11 +102,11 @@ if (this.props.trips.length === 0){
         // var obj = {title: "", date: ""}
         let title = "flight";
         let date = trip.flight.startDate;
-        let endDate = trip.flight.endDate;
+        // let endDate = trip.flight.endDate;
         let carrier = trip.flight.carrier;
         let airPort = trip.flight.startLocation;
         let destination = trip.flight.endLocation;
-        arr.push({title: title, date: date, carrier: carrier, airPort: airPort, destination: destination, end: endDate})
+        arr.push({title: title, date: date, carrier: carrier, airPort: airPort, destination: destination/*, end: endDate*/})
         title = "event";
         date = trip.event.date;
         arr.push({title: title, date: date})

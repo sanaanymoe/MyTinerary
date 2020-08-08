@@ -10,11 +10,8 @@ import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container'
 import TripContainer from './trips/trip_container'
 import UserProfile from './users/user'
-
-
-// import {Button} from 'react-bootstrap';
 import TripIndexContainer from './trips/trip_index_container'
-// import TripIndexItem from './trips/trip_index_item_container'
+import TripIndexItem from './trips/trip_index_item_container'
 
 const App = () => (
   <div>
@@ -23,8 +20,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute exact path="/new_trip" component={TripContainer} />
       <ProtectedRoute exact path="/trips" component={TripIndexContainer} />
-      {/* <ProtectedRoute exact path="/trip" component={TripIndexItem} /> */}
-      {/* <Route exact path="/home" component={NavBarContainer} /> */}
+      <ProtectedRoute exact path="/trips/:id" component={TripIndexItem} />
       <ProtectedRoute exact path="/UserProfile/:id" component={UserProfile} />
     </Switch>
     <Route exact path="/" component={NavBarContainer} />
