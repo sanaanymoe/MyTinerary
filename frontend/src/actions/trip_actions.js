@@ -35,9 +35,6 @@ export const fetchUserTrips = (id) => dispatch => {
   )
 }
 
-// export const showTrip = (id) => dispatch => {
-//   return (
-//     APIUtil.getTrip(id)
-//       .then(trip => dispatch(displayTrip(trip)))
-//   )
-// }
+export const showTrip = (id) => dispatch => {
+  return APIUtil.getTrip(id).then((trip) => dispatch(receiveTrip(trip)));
+}

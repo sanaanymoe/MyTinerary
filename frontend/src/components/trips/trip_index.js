@@ -108,7 +108,7 @@ changeVisibilty = (e) => {
         return null
       } else{
         const trips = this.props.trips[0]
-        // debugger
+        debugger
         return (
           <div>
             <div className="main-div">
@@ -136,15 +136,19 @@ changeVisibilty = (e) => {
         
               {trips.map((trip) => (
                 <div className="trip-index">
-                  <Button
-                    className="trip-btn"
-                    variant="secondary"
-                    id={trip._id}
-                    onMouseOver={this.pointer}
-                    onClick={this.changeVisibilty}
-                  >
-                    {trip.title}
-                  </Button>
+                  <Link to={`/trips/${trip._id}`}>
+
+                    <Button
+                      className="trip-btn"
+                      variant="secondary"
+                      id={trip._id}
+                      onMouseOver={this.pointer}
+                      onClick={this.changeVisibilty}
+                    >
+                      {trip.title}
+                    </Button>
+                  </Link>
+
                   <div id={trip._id} className="trip-item">
                     <h2>Flight</h2>
                     <ul>
