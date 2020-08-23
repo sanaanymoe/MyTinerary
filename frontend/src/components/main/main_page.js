@@ -1,6 +1,6 @@
 import React from 'react';
 import NavBarContainer from "../nav/navbar";
-import MyCalendar from './calendar'
+import MyCalendarContainer from './calenderContainer'
 
 class MainPage extends React.Component {
 
@@ -8,7 +8,10 @@ class MainPage extends React.Component {
     return (
       <div>
         {/* <h1>MyTinerary</h1> */}
-        <NavBarContainer />;
+        <NavBarContainer />
+        <span className="calendar">
+          <MyCalendarContainer />
+        </span>
         {/* <MyCalendar /> */}
         <footer>Copyright &copy; 2020</footer>
       </div>

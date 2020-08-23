@@ -183,6 +183,8 @@ label {
   margin: 5px;
 }
 
+
+
 .calender-box {
   display: block; 
   height: 100px;
@@ -213,3 +215,56 @@ background-color: rgba(255, 255, 255, 0.555);
   height:500px; 
   width:300px;
 }
+
+.fc-daygrid-day {
+  width: 100px;
+  height: 100px;
+}
+.fc-view-harness {
+  width: 700px;
+  border-radius: 10px;
+}
+
+.fc-col-header-cell{
+  width: 100px;
+}
+ .fc-daygrid{
+   height: 639;
+ }
+ .trip-container {
+    display: flex;
+    align-items: center;
+    /* border: 2px solid #55819e; */
+    border: 2px solid white;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 40%;
+    width: 20%;
+    margin-top: 5%;
+    border-radius: 10px;
+    /* border-top-left-radius: 10px;  border-top-right-radius: 10px; */
+  }
+
+  .trip-container ul {
+    list-style: none;
+    font-weight: 700;
+    color: whitesmoke;
+  }
+  
+  .trip-container h2{
+    text-decoration: none;
+    /* color: #514379; */
+    color: rgb(63, 49, 49);
+    font-size: 35px;
+ }
+
+ .trip-container a,h2:hover{
+   text-decoration: none;
+   transition: ease-out;
+  transform: scale(1.5);
+ }
+
+ .hidden{
+   display: none;
+ }
+
