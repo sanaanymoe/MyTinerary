@@ -74,7 +74,7 @@ handleDateClick = (arg) => {
   }
 
 handleEventClick = (e) => { 
-  debugger
+  // debugger
     alert(e.event.title + "\n" + e.event.startStr+ "\n" + e.event.endStr);
     // console.log(e.currentTarget)
   }
@@ -92,7 +92,7 @@ handleEventDrop(){
     //   dateClick={this.handleDateClick}
       
     // />
-debugger
+// debugger
 if (this.props.trips.length === 0){
   return <></>
 }else {
@@ -110,7 +110,7 @@ if (this.props.trips.length === 0){
         title = "event";
         date = trip.event.date;
         arr.push({title: title, date: date})
-        debugger
+        // debugger
       }
     });
     // const title = this.props.trips[0][11].title;

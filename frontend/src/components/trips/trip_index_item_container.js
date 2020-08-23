@@ -1,10 +1,11 @@
 import { connect } from 'react-redux';
 import { showTrip, fetchUserTrips } from '../../actions/trip_actions';
+import { logout } from "../../actions/session_actions";
 import TripIndexItem from './trip_index_item';
 
 
 const mSTP = (state, ownProps) => {
-  debugger
+  // debugger
   return {
     currentUser: state.session.user,
     trips: Object.values(state.entities.trips),
@@ -18,8 +19,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
   return {
+    logout: () => dispatch(logout()),
     fetchTrips: (id) => dispatch(fetchUserTrips(id)),
-    showTrip: (id) => dispatch(showTrip(id))
+    showTrip: (id) => dispatch(showTrip(id)),
   };
 };
 

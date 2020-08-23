@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import logo from '../logo_transparent.png'
 //import './navbar.css'
 import { Button, Nav, NavDropdown, Navbar, Form, FormControl } from "react-bootstrap";
@@ -12,6 +12,7 @@ class NavBar extends React.Component {
     this.getLinks = this.getLinks.bind(this);
     this.demoLoginHandler = this.demoLoginHandler.bind(this);
   }
+
 
   logoutUser(e) {
     e.preventDefault();
@@ -26,8 +27,10 @@ class NavBar extends React.Component {
   // Selectively render links dependent on whether the user is logged in
   getLinks() {
     if (this.props.loggedIn) {
+      debugger
       return (
         <div>
+        {/* <Redirect to="/home"/> */}
           <div className="main-div">
             <Navbar bg="light" expand="lg">
               <Navbar.Brand href="#/">
@@ -71,26 +74,26 @@ class NavBar extends React.Component {
         </div>
       );
     } else {
+      debugger
       return (
         <div className="login-signup-buttons">
-
           <Navbar.Brand href="#/">
-              <img src={logo}></img>
-            </Navbar.Brand>
-            <h1>Welcome to MyTinerary </h1>
-            <h1>Signup/Login and let us plan your Trip</h1>
-            <div>
-              <Link to={"/signup"}>
-                <Button variant="primary">Signup</Button>
-                {"  "}
-              </Link>
-              <Link to={"/login"}>
-                <Button variant="primary">Login</Button>
-              </Link>
-              <Button variant="primary" onClick={this.demoLoginHandler}>
-                Demo User
-              </Button>
-            </div>
+            <img src={logo}></img>
+          </Navbar.Brand>
+          <h1>Welcome to MyTinerary </h1>
+          <h1>Signup/Login and let us plan your Trip</h1>
+          <div>
+            <Link to={"/signup"}>
+              <Button variant="primary">Signup</Button>
+              {"  "}
+            </Link>
+            <Link to={"/login"}>
+              <Button variant="primary">Login</Button>
+            </Link>
+            <Button variant="primary" onClick={this.demoLoginHandler}>
+              Demo User
+            </Button>
+          </div>
         </div>
       );
     }
