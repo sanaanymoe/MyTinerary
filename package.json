@@ -28,7 +28,7 @@
     "express": "^4.17.1",
     "fullcalendar": "^5.1.0",
     "fullcalendar-scheduler": "^5.1.0",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "jwt-decode": "^2.2.0",
     "mongoose": "^5.9.22",
     "passport": "^0.4.1",
